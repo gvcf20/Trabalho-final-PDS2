@@ -15,6 +15,8 @@ User stories:
   - Exibir as regras do jogo
   - Exibir os critérios de pontuação
 
+------------------------------------------------------------------------------------------------------
+
   - Eu, como jogador de truco, quero poder pedir truco quando achar interessante, pois essa é uma possibilidade do jogo.
 
   Critérios de aceitação:
@@ -23,6 +25,7 @@ User stories:
   - Alterar o valor da rodada para 4 pontos caso o adversário aceite
   - Se o adversário não aceitar, ele perde a rodada
 
+------------------------------------------------------------------------------------------------------
   - Eu, como jogador de truco, quero poder ver as cartas na minha mão, para poder decidir qual jogada irei realizar.
 
   Critérios de aceitação:
@@ -30,3 +33,11 @@ User stories:
 - Poder selecionar uma carta
 - Não exibir cartas quando a mão estiver vazia
 - Poder jogar uma carta
+
+-----------------------------------------------------------------------------------------------------
+
+ - Eu, como jogador de truco, quero poder ver o quanto está a pontuação de cada rodada e quanto está o placar para poder me situar melhor no jogo.
+
+ - Exibição de placar 
+ - Exibição da pontuação de rodada
+ - Escolha do número de partidas por cada jogo (Melhor de 3, 5...).
