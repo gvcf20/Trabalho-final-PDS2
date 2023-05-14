@@ -22,3 +22,11 @@ User stories:
   - Somente exibir essa opção quando estiver na minha vez de jogar
   - Alterar o valor da rodada para 4 pontos caso o adversário aceite
   - Se o adversário não aceitar, ele perde a rodada
+
+- Eu, como jogador de truco, quero poder ver as cartas na minha mão, para poder decidir qual jogada irei realizar.
+
+Critérios de aceitação:
+- Exibir as cartas na mão
+- Poder selecionar uma carta
+- Não exibir cartas quando a mão estiver vazia
+- Poder jogar uma carta
