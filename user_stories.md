@@ -2,4 +2,4 @@
 
 Tema: Truco
 
-Grupo: Gabriel Vaz C.Ferreira,
+Grupo: Gabriel Vaz C.Ferreira, Bruno Kang Wu, 
