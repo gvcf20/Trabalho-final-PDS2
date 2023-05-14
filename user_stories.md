@@ -86,4 +86,10 @@ Critérios de aceitação:
  - Exibição da pontuação de rodada
  - Escolha do número de partidas por cada jogo (Melhor de 3, 5...).
 
+-----------------------------------------------------------------------------------------------------
 
+- Eu, como jogador de truco, quero poder saber de quem é a vez de jogar, para poder me situar melhor no jogo. 
+
+ Critérios de aceitação:
+ - Exibir mensagem "Agora é a vez do Jogador X"
+ - Saber quando é a minha vez de jogar. 
