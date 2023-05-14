@@ -46,6 +46,8 @@ User stories:
   - Alterar o valor da rodada para 6 pontos caso o adversário aceite
   - Se o adversário não aceitar, ele perde a rodada
   - Somente exibir essa opção quando estiver na minha vez de jogar
+
+------------------------------------------------------------------------------------------------------
   
 - Eu, como jogador de truco, quero poder pedir 9 ou sair quando o adversário pedir 6, para aumentar o valor da rodada ou desistir da rodada 
 
