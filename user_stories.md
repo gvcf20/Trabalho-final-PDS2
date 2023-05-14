@@ -15,3 +15,4 @@ User stories:
   - Exibir as regras do jogo
   - Exibir os critérios de pontuação
 
+.
