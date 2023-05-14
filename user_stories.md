@@ -15,7 +15,7 @@ User stories:
   - Exibir as regras do jogo
   - Exibir os critérios de pontuação
 
-- Eu, Como jogador de truco, quero poder ver as cartas jogadas durante a rodada, para desenvolver uma estratégia.
+- Eu, como jogador de truco, quero poder ver as cartas jogadas durante a rodada, para desenvolver uma estratégia.
 
   Critérios de aceitação:
   - O jogo deve exibir as cartas jogadas por cada jogador durante a partida.
