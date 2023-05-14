@@ -23,6 +23,31 @@ User stories:
   - Alterar o valor da rodada para 4 pontos caso o adversário aceite
   - Se o adversário não aceitar, ele perde a rodada
 
+
+- Eu, como jogador de truco, quero poder pedir 6 ou sair quando o adversário pedir truco, para aumentar o valor da rodada  ou desistir da rodada 
+
+  Critérios de aceitação:
+  - Exibir que posso pedir 6 ou sair
+  - Alterar o valor da rodada para 6 pontos caso o adversário aceite
+  - Se o adversário não aceitar, ele perde a rodada
+  - Somente exibir essa opção quando estiver na minha vez de jogar
+  
+- Eu, como jogador de truco, quero poder pedir 9 ou sair quando o adversário pedir 6, para aumentar o valor da rodada ou desistir da rodada 
+
+  Critérios de aceitação:
+  - Exibir que posso pedir 12 ou sair
+  - Alterar o valor da rodada para 9 pontos caso o adversário aceite
+  - Se o adversário não aceitar, ele perde a rodada
+  - Somente exibir essa opção quando estiver na minha vez de jogar
+
+- Eu, como jogador de truco, quero poder pedir 12 ou sair quando o adversário pedir 9, para aumentar o valor da rodada ou desistir da rodada caso
+
+  Critérios de aceitação:
+  - Exibir que posso pedir 12 ou sair
+  - Alterar o valor da rodada para 12 pontos caso o adversário aceite
+  - Se o adversário não aceitar, ele perde a rodada
+  - Somente exibir essa opção quando estiver na minha vez de jogar
+
 - Eu, como jogador de truco, quero poder ver as cartas na minha mão, para poder decidir qual jogada irei realizar.
 
 Critérios de aceitação:
@@ -30,3 +55,4 @@ Critérios de aceitação:
 - Poder selecionar uma carta
 - Não exibir cartas quando a mão estiver vazia
 - Poder jogar uma carta
+
