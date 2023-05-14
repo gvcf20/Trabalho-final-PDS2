@@ -23,3 +23,10 @@ User stories:
   - Somente exibir essa opção quando estiver na minha vez de jogar
   - Alterar o valor da rodada para 4 pontos caso o adversário aceite
   - Se o adversário não aceitar, ele perde a rodada
+
+- Eu, como jogador de truco, quero poder pedir 6 ou sair quando o adversário pedir truco, para aumentar o valor da rodada caso ou desistir da rodada caso
+
+  Critérios de aceitação:
+  - Alterar o valor da rodada para 6 pontos caso o adversário aceite
+  - Se o adversário não aceitar, ele perde a rodada
+   
