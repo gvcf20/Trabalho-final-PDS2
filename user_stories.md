@@ -21,4 +21,5 @@ User stories:
   Critérios de aceitação:
   - Exibir que posso pedir truco
   - Somente exibir essa opção quando estiver na minha vez de jogar
-  - 
+  - Alterar o valor da rodada para 4 pontos caso o adversário aceite
+  - Se o adversário não aceitar, ele perde a rodada
