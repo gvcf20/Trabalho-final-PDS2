@@ -15,3 +15,10 @@ User stories:
   - Exibir as regras do jogo
   - Exibir os critérios de pontuação
 
+
+- Eu, como jogador de truco, quero poder pedir truco quando achar interessante, pois essa é uma possibilidade do jogo.
+
+  Critérios de aceitação:
+  - Exibir que posso pedir truco
+  - Somente exibir essa opção quando estiver na minha vez de jogar
+  - 
