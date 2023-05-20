@@ -16,6 +16,9 @@ int main(){
     if(c == 'Y'){
         std::vector<Jogador> jogadores = cadastro_jogadores();
         std::pair<Dupla, Dupla> duplas = set_duplas(jogadores);
+
+        JOGO jogo;
+        
     }
 
     return 0;
