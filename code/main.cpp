@@ -1,13 +1,21 @@
 #include "../header/distribui_cartas.hpp"
 #include "../header/cartas.hpp"
+#include "../header/jogo.hpp"
 #include "../header/embaralhamento.hpp"
 #include <iostream>
+#include <string>
+
 int main(){
     
-    Baralho baralho;
-    embaralhar(baralho);
-    for(std::size_t i = 0; i < baralho.cartas_baralho.size(); ++i){
-        std::cout << baralho.cartas_baralho[i].toString() << std::endl;
+    
+    std::cout << "*Olá seres humanos, vocês desejam jogar truco [Y/N]?" << std::endl;
+    char c; 
+    std::cin >> c;
+    std::cout << std::endl;
+    if(c == 'Y'){
+        cadastro_jogadores();
+        
     }
+
     return 0;
 }

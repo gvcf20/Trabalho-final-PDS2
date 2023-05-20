@@ -17,4 +17,6 @@ class jogo{
     
 };
 
+void cadastro_jogadores();
+
 #endif
