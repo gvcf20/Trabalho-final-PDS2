@@ -4,6 +4,7 @@
 #include "../header/embaralhamento.hpp"
 #include <iostream>
 #include <string>
+#include <vector>
 
 int main(){
     
@@ -13,7 +14,8 @@ int main(){
     std::cin >> c;
     std::cout << std::endl;
     if(c == 'Y'){
-        cadastro_jogadores();
+        std::vector<Jogador> jogadores = cadastro_jogadores();
+        exibe_jogadores(jogadores);
         
     }
 
