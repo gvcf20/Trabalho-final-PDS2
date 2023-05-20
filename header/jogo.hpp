@@ -4,20 +4,13 @@
 #include "../header/cartas.hpp"
 #include "../header/regras.hpp"
 #include "../header/embaralhamento.hpp"
-#include "../header/distribui_cartas.hpp"
 #include "../header/rodada.hpp"
+#include "dupla.hpp"
 #include <vector>
-
-class jogo{
-    public:
-    void acessa_jogador();
-
-    private:
-    std::vector<Jogador> jogadores;
-    
-};
 
 std::vector<Jogador> cadastro_jogadores();
 void exibe_jogadores(std::vector<Jogador> jogs);
+std::pair<Dupla, Dupla> set_duplas(std::vector<Jogador> jogadoress);
+
 
 #endif
