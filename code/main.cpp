@@ -15,8 +15,7 @@ int main(){
     std::cout << std::endl;
     if(c == 'Y'){
         std::vector<Jogador> jogadores = cadastro_jogadores();
-        exibe_jogadores(jogadores);
-        
+        std::pair<Dupla, Dupla> duplas = set_duplas(jogadores);
     }
 
     return 0;
