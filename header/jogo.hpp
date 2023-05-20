@@ -17,4 +17,7 @@ class jogo{
     
 };
 
+std::vector<Jogador> cadastro_jogadores();
+void exibe_jogadores(std::vector<Jogador> jogs);
+
 #endif

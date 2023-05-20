@@ -6,7 +6,7 @@
 void distribui_cartas(){
     Baralho baralho;
     embaralhar(baralho);
-    for(const auto& jogador : jogadores){
+    //for(const auto& jogador : jogadores){
 
     }
-}
+//}
