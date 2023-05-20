@@ -8,7 +8,7 @@
 class Dupla {
     public:
     std::pair<Jogador, Jogador> duplinha;
-    unsigned int pontuação;
+    unsigned int pontuação = 0;
 
 };
 
