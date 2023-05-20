@@ -8,7 +8,7 @@
 class Dupla {
     public:
     std::pair<Jogador, Jogador> duplinha;
-
+    
 };
 
 #endif
