@@ -7,5 +7,3 @@ class JOGO{
   public:
 
   std::pair<Dupla, Dupla> duplas;
-
-}

@@ -1,6 +1,7 @@
-#include "../header/distribui_cartas.hpp"
+
 #include "../header/cartas.hpp"
 #include "../header/jogo.hpp"
+#include "../header/JOGO_principal.hpp"
 #include "../header/embaralhamento.hpp"
 #include <iostream>
 #include <string>
@@ -16,9 +17,10 @@ int main(){
     if(c == 'Y'){
         std::vector<Jogador> jogadores = cadastro_jogadores();
         std::pair<Dupla, Dupla> duplas = set_duplas(jogadores);
-
         JOGO jogo;
-        
+        while(duplas.first.pontuação < 12 || duplas.second.pontuação < 12){
+            jogo.começa_rodada();
+        }
     }
 
     return 0;
