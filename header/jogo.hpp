@@ -4,7 +4,6 @@
 #include "../header/cartas.hpp"
 #include "../header/regras.hpp"
 #include "../header/embaralhamento.hpp"
-#include "../header/distribui_cartas.hpp"
 #include "../header/rodada.hpp"
 #include "dupla.hpp"
 #include <vector>
