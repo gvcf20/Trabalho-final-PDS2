@@ -26,7 +26,6 @@ void Rodada::distribui_cartas(std::pair<Dupla, Dupla> duplas){
     duplas.first.duplinha.second.mao = dar_cartas(baralho);
     duplas.second.duplinha.first.mao = dar_cartas(baralho);
     duplas.second.duplinha.second.mao = dar_cartas(baralho);
-    return mao;
 
 }
 
