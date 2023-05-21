@@ -6,4 +6,6 @@ class JOGO{
 
   public:
 
-  std::pair<Dupla, Dupla> duplas;
+  std::pair<Dupla, Dupla> duplas
+
+}
