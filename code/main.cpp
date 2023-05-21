@@ -3,6 +3,7 @@
 #include "../header/jogo.hpp"
 #include "../header/JOGO_principal.hpp"
 #include "../header/embaralhamento.hpp"
+#include "../header/rodada.hpp"
 #include <iostream>
 #include <string>
 #include <vector>

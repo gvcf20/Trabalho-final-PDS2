@@ -12,7 +12,7 @@ std::vector<Carta> dar_cartas(Baralho baralho){
     return mao;
 }
 
-std::vector<Carta> distribui_cartas(std::pair<Dupla, Dupla> duplas){
+std::vector<Carta> Rodada::distribui_cartas(std::pair<Dupla, Dupla> duplas){
     Baralho baralho;
     baralho.inicializa_Baralho();
     embaralhar(baralho);
@@ -22,9 +22,11 @@ std::vector<Carta> distribui_cartas(std::pair<Dupla, Dupla> duplas){
     duplas.second.duplinha.first.mao = dar_cartas(baralho);
     duplas.second.duplinha.second.mao = dar_cartas(baralho);
 
+    return mao;
+
 }
 
-void exibe_cartas(std::pair<Dupla, Dupla> duplas){
+void Rodada::exibe_cartas(std::pair<Dupla, Dupla> duplas){
     for(int i = 0; i < 3; ++i){
         std::cout << duplas.first.duplinha.first.mao[i].toString() << std::endl;
     }
