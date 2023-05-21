@@ -18,9 +18,17 @@ int main(){
         std::vector<Jogador> jogadores = cadastro_jogadores();
         std::pair<Dupla, Dupla> duplas = set_duplas(jogadores);
         JOGO jogo;
+<<<<<<< HEAD
         while(duplas.first.pontuação < 12 || duplas.second.pontuação < 12){
             jogo.começa_rodada();
         }
+=======
+        while(duplas.first.pontuação < 12){
+            jogo.começa_rodada(duplas);
+            duplas.first.pontuação +=2;
+        };
+
+>>>>>>> 55c48188433769aaa35df4d7979db9292435c6de
     }
 
     return 0;
