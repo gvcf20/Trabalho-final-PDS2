@@ -5,9 +5,9 @@
 #include <vector>
 
 std::vector<Carta> dar_cartas(Baralho baralho){
-    std::vector<Carta> mao;
+    std::vector<Carta> mao ={};
     for(int i = 0; i < 3; ++i){
-        mao[i] = baralho.pegar_cartas();
+        mao.push_back(baralho.pegar_cartas());
     }
     return mao;
 }
@@ -24,10 +24,19 @@ std::vector<Carta> distribui_cartas(std::pair<Dupla, Dupla> duplas){
 
 }
 
-//void exibe_cartas(std::pair<Dupla, Dupla> duplas){
-    //for(int i = 0; i < 3; ++i){
-        //std::cout << duplas.first.duplinha.first,m
-    //}
-//}
+void exibe_cartas(std::pair<Dupla, Dupla> duplas){
+    for(int i = 0; i < 3; ++i){
+        std::cout << duplas.first.duplinha.first.mao[i].toString() << std::endl;
+    }
+    for(int i = 0; i < 3; ++i){
+        std::cout << duplas.first.duplinha.second.mao[i].toString() << std::endl;
+    }
+    for(int i = 0; i < 3; ++i){
+        std::cout << duplas.second.duplinha.first.mao[i].toString() << std::endl;
+    }
+    for(int i = 0; i < 3; ++i){
+        std::cout << duplas.second.duplinha.second.mao[i].toString() << std::endl;
+    }
+}
 
     
