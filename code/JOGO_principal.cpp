@@ -3,17 +3,8 @@
 
 #include <iostream>
 #include <vector>
-#include "dupla.hpp"
+#include "../header/dupla.hpp"
 
-
-class JOGO{
-
-  public:
-
-void começa_rodada(){
-    Rodada rodada;
-    //rodada.distribui_cartas();
-
-}
-
+void começa_rodada(std::pair <Dupla,Dupla> duplas_h){
+  
 }
