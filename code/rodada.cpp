@@ -1,5 +1,6 @@
 #include "../header/rodada.hpp"
 #include "../header/cartas.hpp"
+#include "../header/dupla.hpp"
 #include "embaralhamento.cpp"
 #include <iostream>
 #include <vector>

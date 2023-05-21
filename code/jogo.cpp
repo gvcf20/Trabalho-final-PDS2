@@ -22,7 +22,6 @@ void exibe_jogadores(std::vector<Jogador> jogs){
 std::pair<Dupla, Dupla> set_duplas(std::vector<Jogador> jogadoress){
     Dupla d1;
     Dupla d2;
-    std::cout<< jogadoress[1].nome_jogador << std::endl;
     d1.duplinha.first = jogadoress[1];
     d1.duplinha.second = jogadoress[2];
     d2.duplinha.first = jogadoress[3];
