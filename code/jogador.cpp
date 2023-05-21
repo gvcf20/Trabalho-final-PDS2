@@ -4,5 +4,7 @@
 #include <string>
 
 void Jogador::get_nome(){
-    std::getline(std::cin, nome_jogador);
+    std::string nome;
+    std::getline(std::cin, nome);
+    nome_jogador = nome;
 }
