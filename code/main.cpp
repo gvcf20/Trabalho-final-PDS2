@@ -2,6 +2,7 @@
 #include "../header/cartas.hpp"
 #include "../header/jogo.hpp"
 #include "../header/JOGO_principal.hpp"
+#include "../header/rodada.hpp"
 #include "../header/embaralhamento.hpp"
 #include <iostream>
 #include <string>
