@@ -15,3 +15,5 @@ void começa_rodada(){
     //rodada.distribui_cartas();
 
 }
+
+}
