@@ -1,14 +1,16 @@
 Classe: Cartas
+---------------------
 
 Responsabilidades: 
 Declarar todas as cartas existentes no baralho.
-Define os naipes existentes
+Define os naipes existentes.
 
 Colaboradores: 
 xxxxxxxx
----------------------
+
 
 Classe: Jogador
+---------------------
 
 Responsabilidades: 
 Nome.
@@ -20,10 +22,11 @@ Aumentar.
 Sair.
 
 Colaboradores: 
-Cartas
----------------------
+Cartas.
+
 
 Classe: Regras
+---------------------
 
 Responsabilidades: 
 Cada jogador recebe 3 cartas.
@@ -32,23 +35,25 @@ Define 12 como pontuação máxima de uma rodada.
 
 
 Colaboradores: 
-Cartas
----------------------
+Cartas.
+
 
 Classe: Mão
+---------------------
 
 Responsabilidades: 
 Armazenar até 3 cartas.
 exibir cartas.
-adicionar 3 cartas
+adicionar 3 cartas.
 remover cartas 1 a 1 a cada rodada.
 
 Colaboradores: 
-Cartas
-Jogador
----------------------
+Cartas.
+Jogador.
+
 
 Classe: Mesa
+---------------------
 
 Responsabilidades: 
 Exibir cartas na mesa.
@@ -57,10 +62,11 @@ Adiciona cartas.
 
 Colaboradores: 
 Cartas.
-Jogadores
----------------------
+Jogadores.
+
 
 Classe: Dupla
+---------------------
 
 Responsabilidades: 
 Mostrar a maior carta na mesa.
@@ -71,11 +77,12 @@ Pontuação atual da rodada.
 Colaboradores: 
 Cartas.
 Regras.
-Duplas
+Duplas.
 
----------------------
+
 
 Classe: Placar
+---------------------
 
 Responsabilidades: 
 Exibe o placar.
@@ -83,33 +90,34 @@ Atualizada a cada rodada
 Iniciar com 0 a 0
 
 Colaboradores: 
-Regras
+Regras.
 Rodada.
 Dupla.
 
----------------------
+
 
 Classe: Valor_Rodada
+---------------------
 
 Responsabilidades: 
 Inicializa em 0 x 0.
 Aumenta um ponto a cada rodada.
 
 Colaboradores: 
-Cartas
-Dupla
+Cartas.
+Dupla.
 
----------------------
+
 
 Classe:Vencedor
+---------------------
 
 Responsabilidades: 
 Determinar vencedor.
-Exibir Dupla vencedora
+Exibir Dupla vencedora.
 Exibir placar.
 
 Colaboradores: 
-Rodada
-Placar
----------------------
+Rodada.
+Placar.
 
