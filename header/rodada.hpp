@@ -4,12 +4,12 @@
 #include "JOGO_principal.hpp"
 #include <vector>
 
-std::vector<Carta> dar_cartas(Baralho baralho);
+std::vector<Carta> dar_cartas(Baralho& baralho);
 
 class Rodada{
     
     public:
-    std::vector<Carta> distribui_cartas(std::pair<Dupla, Dupla> duplas);
+    void distribui_cartas(std::pair<Dupla, Dupla> duplas);
     void exibe_cartas(std::pair<Dupla, Dupla> duplas);
 };
 

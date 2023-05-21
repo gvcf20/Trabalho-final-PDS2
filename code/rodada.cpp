@@ -5,15 +5,19 @@
 #include <iostream>
 #include <vector>
 
-std::vector<Carta> dar_cartas(Baralho baralho){
+std::vector<Carta> dar_cartas(Baralho& baralho){
     std::vector<Carta> mao ={};
     for(int i = 0; i < 3; ++i){
-        mao.push_back(baralho.pegar_cartas());
+        auto carta = baralho.pegar_cartas();
+
+        std::cout<<carta.toString() << std::endl;
+        mao.push_back(carta);
     }
+    
     return mao;
 }
 
-std::vector<Carta> Rodada::distribui_cartas(std::pair<Dupla, Dupla> duplas){
+void Rodada::distribui_cartas(std::pair<Dupla, Dupla> duplas){
     Baralho baralho;
     baralho.inicializa_Baralho();
     embaralhar(baralho);
@@ -22,8 +26,6 @@ std::vector<Carta> Rodada::distribui_cartas(std::pair<Dupla, Dupla> duplas){
     duplas.first.duplinha.second.mao = dar_cartas(baralho);
     duplas.second.duplinha.first.mao = dar_cartas(baralho);
     duplas.second.duplinha.second.mao = dar_cartas(baralho);
-
-    return mao;
 
 }
 

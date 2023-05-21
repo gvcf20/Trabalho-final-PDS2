@@ -22,10 +22,12 @@ int main(){
         exibe_duplas(duplas);
 
         JOGO jogo;
-        //while(duplas.first.pontuação < 12){
-          //  jogo.começa_rodada(duplas);
-            //duplas.first.pontuação +=2;
-        //};
+        while(duplas.first.pontuacao < 12){
+            
+            jogo.comeca_rodada(duplas);
+            duplas.first.pontuacao +=2;
+            std::cout <<"SUS==================" << std::endl;
+        };
 
     }
 
