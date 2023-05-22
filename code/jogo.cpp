@@ -39,7 +39,8 @@ void exibe_duplas(std::pair<Dupla, Dupla> duplas) {
     std::cout << "Dupla 1:" << std::endl;
     std::cout << "Jogador 1: " << duplas.first.duplinha.first.nome_jogador << std::endl;
     std::cout << "Jogador 2: " << duplas.first.duplinha.second.nome_jogador << std::endl;
-
+    
+    std::cout << "VS" << std::endl;
     // Exibe informações da segunda dupla
     std::cout << "Dupla 2:" << std::endl;
     std::cout << "Jogador 1: " << duplas.second.duplinha.first.nome_jogador << std::endl;

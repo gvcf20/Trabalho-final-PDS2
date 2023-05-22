@@ -45,5 +45,3 @@ void Rodada::exibe_cartas(std::pair<Dupla, Dupla> duplas){
         std::cout << duplas.second.duplinha.second.mao[i].toString() << std::endl;
     }
 }
-
-    

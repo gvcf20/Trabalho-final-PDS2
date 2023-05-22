@@ -4,7 +4,7 @@
 #include "../header/JOGO_principal.hpp"
 #include "../header/rodada.hpp"
 #include "../header/embaralhamento.hpp"
-#include "rodada.cpp"
+#include "../header/rodada.hpp"
 #include <iostream>
 #include <string>
 #include <vector>
