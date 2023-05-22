@@ -24,10 +24,8 @@ int main(){
 
         JOGO jogo;
         while(duplas.first.pontuacao < 12){
-            
             jogo.comeca_rodada(duplas);
             duplas.first.pontuacao +=2;
-            std::cout <<"SUS==================" << std::endl;
         };
 
     }
