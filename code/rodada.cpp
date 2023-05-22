@@ -9,15 +9,13 @@ std::vector<Carta> dar_cartas(Baralho& baralho){
     std::vector<Carta> mao ={};
     for(int i = 0; i < 3; ++i){
         auto carta = baralho.pegar_cartas();
-
-        std::cout<<carta.toString() << std::endl;
         mao.push_back(carta);
     }
     
     return mao;
 }
 
-void Rodada::distribui_cartas(std::pair<Dupla, Dupla> duplas){
+void Rodada::distribui_cartas(std::pair<Dupla, Dupla>& duplas){
     Baralho baralho;
     baralho.inicializa_Baralho();
     embaralhar(baralho);
@@ -29,28 +27,21 @@ void Rodada::distribui_cartas(std::pair<Dupla, Dupla> duplas){
 
 }
 
-void Rodada::exibe_cartas(std::pair<Dupla, Dupla> duplas) {
-    for (int i = 0; i < 3; ++i) {
-    
+void Rodada::exibe_cartas(std::pair<Dupla, Dupla> duplas){
+    std::cout << "Dupla 1 " << duplas.first.duplinha.first.nome_jogador << std::endl;
+    for(int i = 0; i < 3; ++i){
         std::cout << duplas.first.duplinha.first.mao[i].toString() << std::endl;
     }
-
- 
-    for (int i = 0; i < 3; ++i) {
+    std::cout << "Dupla 1 " << duplas.first.duplinha.second.nome_jogador << std::endl;
+    for(int i = 0; i < 3; ++i){
         std::cout << duplas.first.duplinha.second.mao[i].toString() << std::endl;
     }
-
-  
-    for (int i = 0; i < 3; ++i) {
+    std::cout << "Dupla 2 " << duplas.second.duplinha.first.nome_jogador << std::endl;
+    for(int i = 0; i < 3; ++i){
         std::cout << duplas.second.duplinha.first.mao[i].toString() << std::endl;
     }
-
-   
-    for (int i = 0; i < 3; ++i) {
+    std::cout << "Dupla 2 " << duplas.second.duplinha.second.nome_jogador << std::endl;
+    for(int i = 0; i < 3; ++i){
         std::cout << duplas.second.duplinha.second.mao[i].toString() << std::endl;
     }
-
-
- // queria que antes de cada carta imprimisse algo como jogador xx suas cartas são, mas o compilador
- // atropela tudo e imprime as cartas antes
 }

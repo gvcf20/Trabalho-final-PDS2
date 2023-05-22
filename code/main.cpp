@@ -2,6 +2,7 @@
 #include "../header/cartas.hpp"
 #include "../header/jogo.hpp"
 #include "../header/JOGO_principal.hpp"
+#include "../header/rodada.hpp"
 #include "../header/embaralhamento.hpp"
 #include "../header/rodada.hpp"
 #include <iostream>
@@ -23,10 +24,8 @@ int main(){
 
         JOGO jogo;
         while(duplas.first.pontuacao < 12){
-            
             jogo.comeca_rodada(duplas);
             duplas.first.pontuacao +=2;
-            std::cout <<"SUS==================" << std::endl;
         };
 
     }
