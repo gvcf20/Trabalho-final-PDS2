@@ -29,26 +29,28 @@ void Rodada::distribui_cartas(std::pair<Dupla, Dupla> duplas){
 
 }
 
-void Rodada::exibe_cartas(std::pair<Dupla, Dupla> duplas){
-    std::cout<< duplas.first.duplinha.first.nome_jogador << "suas cartas são: " << std::endl;
-    for(int i = 0; i < 3; ++i){
+void Rodada::exibe_cartas(std::pair<Dupla, Dupla> duplas) {
+    for (int i = 0; i < 3; ++i) {
+    
         std::cout << duplas.first.duplinha.first.mao[i].toString() << std::endl;
     }
-    std::cout<< duplas.first.duplinha.second.nome_jogador << "suas cartas são: " << std::endl;
 
-    for(int i = 0; i < 3; ++i){
+ 
+    for (int i = 0; i < 3; ++i) {
         std::cout << duplas.first.duplinha.second.mao[i].toString() << std::endl;
     }
-    std::cout<< duplas.second.duplinha.first.nome_jogador <<","<< "suas cartas são: " << std::endl;
- 
-    for(int i = 0; i < 3; ++i){
+
+  
+    for (int i = 0; i < 3; ++i) {
         std::cout << duplas.second.duplinha.first.mao[i].toString() << std::endl;
     }
-    std::cout<< duplas.second.duplinha.second.nome_jogador << "suas cartas são: " << std::endl;
+
    
-    for(int i = 0; i < 3; ++i){
+    for (int i = 0; i < 3; ++i) {
         std::cout << duplas.second.duplinha.second.mao[i].toString() << std::endl;
     }
-}
 
-    
+
+ // queria que antes de cada carta imprimisse algo como jogador xx suas cartas são, mas o compilador
+ // atropela tudo e imprime as cartas antes
+}
