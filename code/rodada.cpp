@@ -44,6 +44,7 @@ void Rodada::exibe_cartas(std::pair<Dupla, Dupla> duplas){
     for(int i = 0; i < 3; ++i){
         std::cout << duplas.second.duplinha.second.mao[i].toString() << std::endl;
     }
+<<<<<<< HEAD
 }
 std::vector<Carta> Rodada::joga_carta(std::pair<Dupla, Dupla>& duplas){
     
@@ -82,3 +83,6 @@ std::vector<Carta> Rodada::joga_carta(std::pair<Dupla, Dupla>& duplas){
 }
 
 
+=======
+}
+>>>>>>> d57b300c98cd6ebb956c89705cc9d25f435b06f1
