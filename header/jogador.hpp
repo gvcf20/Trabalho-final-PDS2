@@ -6,10 +6,17 @@
 #include <vector>
 
 class Jogador{
+    
     public:
     std::string nome_jogador;
     void get_nome();
+    void set_mao(std::vector<Carta> cartas);
+    std::vector<Carta> get_mao(std::vector<Carta> mao);
+    friend class Rodada;
+    
+    private:
     std::vector<Carta> mao;
+    
 };
 
 #endif

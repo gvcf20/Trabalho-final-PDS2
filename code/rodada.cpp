@@ -1,11 +1,12 @@
 #include "../header/rodada.hpp"
 #include "../header/cartas.hpp"
 #include "../header/dupla.hpp"
+#include "../header/jogador.hpp"
 #include "embaralhamento.cpp"
 #include <iostream>
 #include <vector>
 
-std::vector<Carta> dar_cartas(Baralho& baralho){
+std::vector<Carta> Rodada::dar_cartas(Baralho& baralho){
     std::vector<Carta> mao ={};
     for(int i = 0; i < 3; ++i){
         auto carta = baralho.pegar_cartas();
@@ -20,14 +21,17 @@ void Rodada::distribui_cartas(std::pair<Dupla, Dupla>& duplas){
     baralho.inicializa_Baralho();
     embaralhar(baralho);
     std::vector<Carta> mao;
-    duplas.first.duplinha.first.mao = dar_cartas(baralho);
-    duplas.first.duplinha.second.mao = dar_cartas(baralho);
-    duplas.second.duplinha.first.mao = dar_cartas(baralho);
-    duplas.second.duplinha.second.mao = dar_cartas(baralho);
+    duplas.first.duplinha.first.set_mao(dar_cartas(baralho));
+    duplas.first.duplinha.second.set_mao(dar_cartas(baralho));
+    duplas.second.duplinha.first.set_mao(dar_cartas(baralho));
+    duplas.second.duplinha.second.set_mao(dar_cartas(baralho));
 
 }
 
 void Rodada::exibe_cartas(std::pair<Dupla, Dupla> duplas){
+    std::vector<Carta> mao_jogador1;
+    Jogador jogador;
+    
     std::cout << "Dupla 1 " << duplas.first.duplinha.first.nome_jogador << std::endl;
     for(int i = 0; i < 3; ++i){
         std::cout << duplas.first.duplinha.first.mao[i].toString() << std::endl;
@@ -44,7 +48,6 @@ void Rodada::exibe_cartas(std::pair<Dupla, Dupla> duplas){
     for(int i = 0; i < 3; ++i){
         std::cout << duplas.second.duplinha.second.mao[i].toString() << std::endl;
     }
-<<<<<<< HEAD
 }
 std::vector<Carta> Rodada::joga_carta(std::pair<Dupla, Dupla>& duplas){
     
@@ -78,11 +81,10 @@ std::vector<Carta> Rodada::joga_carta(std::pair<Dupla, Dupla>& duplas){
     }
     mao_rodada.push_back(duplas.second.duplinha.second.mao[i4]);
     duplas.second.duplinha.second.mao.erase(duplas.second.duplinha.second.mao.begin() + i4);
-
+    
+    std::cout << "Cartas da partida " << std::endl;
+    
     return mao_rodada;
 }
 
 
-=======
-}
->>>>>>> d57b300c98cd6ebb956c89705cc9d25f435b06f1
