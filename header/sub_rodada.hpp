@@ -17,3 +17,8 @@
 //Uma dupla ganha na primeira, perde na segunda e empata na terceira e o peso da primeira
 //sub_rodada é maior que as demais
 
+class Sub_rodada{
+    std::vector<Carta> joga_carta(std::pair<Dupla, Dupla>& duplas, unsigned i);
+    Dupla verifica_vencedor(std::pair<Dupla, Dupla>& duplas, std::vector<Cartas> cartas_jogadas);
+    
+}
