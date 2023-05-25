@@ -9,8 +9,8 @@
 #include <vector>
 
 std::vector<Jogador> cadastro_jogadores();
-void exibe_jogadores(std::vector<Jogador> jogs);
+void exibe_jogadores(const std::vector<Jogador> jogs);
 std::pair<Dupla, Dupla> set_duplas(std::vector<Jogador> jogadoress);
-void exibe_duplas(std::pair<Dupla, Dupla> duplas);
+void exibe_duplas(const std::pair<Dupla, Dupla> duplas);
 
 #endif

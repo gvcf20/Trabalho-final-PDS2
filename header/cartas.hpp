@@ -33,7 +33,11 @@ struct Carta
     Naipes naipes;
     Tipos_Cartas tipos_cartas;
     int peso;
-
+    bool operator == (const Carta &c){
+        if(naipes == c.naipes && tipos_cartas == c.tipos_cartas){
+            return true;
+        } return false;
+    }
     std::string toString()
     {
         std::string tipoDaCarta = "";

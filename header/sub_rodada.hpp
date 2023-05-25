@@ -3,13 +3,9 @@
 #include <iostream>
 #include <vector>
 #include<string>
+#include "cartas.hpp"
 
-class sub_rodada{
-    public:
-    bool vencedor_sub_rodada();
-    bool empate_sub_rodada();
-    bool verifica_casos();
-};
+
 
 #endif 
 //Este método estará responsável por avaliar as sub_partidas. Nesse sentido, sub_partidas
