@@ -3,6 +3,8 @@
 #include "../header/dupla.hpp"
 #include "../header/jogador.hpp"
 #include "../header/embaralhamento.hpp"
+#include "../header/sub_rodada.hpp"
+#include "../header/regras.hpp"
 #include <iostream>
 #include <vector>
 
@@ -89,8 +91,11 @@ std::vector<Carta> Rodada::joga_carta(std::pair<Dupla, Dupla>& duplas, unsigned 
     std::cout << duplas.first.duplinha.second.nome_jogador << ": "<< mao_rodada[1].toString() << std::endl;
     std::cout << duplas.second.duplinha.first.nome_jogador << ": " << mao_rodada[2].toString() << std::endl;
     std::cout << duplas.second.duplinha.second.nome_jogador << ": "<< mao_rodada[3].toString() << std::endl;
-    //std::cout << "O vencedor da rodad foi: " << FUNÇÃO QUE RETORNA O JOGADOR QUE ENVIOU A MAIOR CARTA << std::endl;
-    //std::cout << PLACAR << std::endl;
+
+    //Vencedor vencedor;
+
+    //std::cout << "O vencedor da rodada foi: " << vencedor.vencedor_sub_rodada(mao_rodada) << std::endl;
+    //std::cout << PLACAR PARCIAL << std::endl;
     return mao_rodada;
 }
 //for(std::size_t i = 0; i < mao_rodada.size(); i++){
