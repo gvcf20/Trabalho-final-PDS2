@@ -85,10 +85,15 @@ std::vector<Carta> Rodada::joga_carta(std::pair<Dupla, Dupla>& duplas, unsigned 
     std::cout << "Cartas das mãos dos jogares: " << std::endl;
     exibe_cartas(duplas);
     std::cout << "Cartas jogadas: " << std::endl;
-    for(std::size_t i = 0; i < mao_rodada.size(); i++){
-        std::cout << mao_rodada[i].toString() << std::endl;
-    }
+    std::cout << duplas.first.duplinha.first.nome_jogador << ": " << mao_rodada[0].toString() << std::endl;
+    std::cout << duplas.first.duplinha.second.nome_jogador << ": "<< mao_rodada[1].toString() << std::endl;
+    std::cout << duplas.second.duplinha.first.nome_jogador << ": " << mao_rodada[2].toString() << std::endl;
+    std::cout << duplas.second.duplinha.second.nome_jogador << ": "<< mao_rodada[3].toString() << std::endl;
+    //std::cout << "O vencedor da rodad foi: " << FUNÇÃO QUE RETORNA O JOGADOR QUE ENVIOU A MAIOR CARTA << std::endl;
+    //std::cout << PLACAR << std::endl;
     return mao_rodada;
 }
-
+//for(std::size_t i = 0; i < mao_rodada.size(); i++){
+  //      std::cout << mao_rodada[i].toString() << std::endl;
+    //}
 
