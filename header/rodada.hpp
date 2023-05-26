@@ -10,8 +10,9 @@ class Rodada{
     std::vector<Carta> dar_cartas(Baralho& baralho);
     void distribui_cartas(std::pair<Dupla, Dupla>& duplas);
     void exibe_cartas(std::pair<Dupla, Dupla> duplas);
-    std::vector<Carta> joga_carta(std::pair<Dupla, Dupla>& duplas, unsigned i);
+    
 };
+
 
 
 #endif
