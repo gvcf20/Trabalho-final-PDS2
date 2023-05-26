@@ -12,6 +12,7 @@ class Jogador{
     void get_nome();
     void set_mao(std::vector<Carta> cartas);
     std::vector<Carta> get_mao(std::vector<Carta> mao);
+    friend class Sub_Rodada;
     friend class Rodada;
     
     private:
