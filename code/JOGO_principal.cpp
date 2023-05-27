@@ -13,5 +13,5 @@ void JOGO::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h){
     Sub_Rodada sub_rodada;
     std::vector<Carta> cartas_jogadas;
     cartas_jogadas = sub_rodada.joga_carta(duplas_h, 2);
-    sub_rodada.verifica_vencedor(duplas_h , cartas_jogadas);
+    sub_rodada.verifica_vencedor(duplas_h , cartas_jogadas, 1);
 }
