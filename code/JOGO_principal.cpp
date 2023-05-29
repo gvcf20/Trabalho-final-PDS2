@@ -17,7 +17,7 @@ void JOGO::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h){
 }
 
 void JOGO::campeao(std::pair <Dupla,Dupla>& duplas_h){
-    if(duplas_h.first.pontuacao = 12){
+    if(duplas_h.first.jogos_vencidos = 2){
         std::cout << "Os grandes vencedores são: "<< duplas_h.first.duplinha.first.nome_jogador << " e " << duplas_h.first.duplinha.second.nome_jogador<< std::endl; 
     } else{
         std::cout << "Os grandes vencedores são: "<< duplas_h.second.duplinha.first.nome_jogador << " e " << duplas_h.second.duplinha.second.nome_jogador<< std::endl;
