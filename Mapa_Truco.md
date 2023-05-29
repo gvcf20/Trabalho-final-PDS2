@@ -46,7 +46,7 @@ Função main:
 
   Em seguida, criaremos as sub_rodadas. Necessariamente, haverá 2 sub_rodadas, caso a rodada não termine com 2 sub rodadas, faz-se necessário a criação de uma terceira sub_rodada de desempate. Dentro de uma sub rodada, o processo de pontuação já é feito automaticamente.
 
-  Logo, enquanto a pontuação de sub rodadas de ambas as duplas for menor que 2, começaremos uma nova sub rodada. Em uma sub rodada, cada jogador joga uma carta com o método joga_carta() e usamos o método verifica_vencedor() para atribuir pontuação a dupla vencedora da sub rodada (PHILL ESTÁ TRABALHANDO NISSO NESSE EXATO MOMENTO). 
+  Logo, enquanto a pontuação de sub rodadas de ambas as duplas for menor que 2, começaremos uma nova sub rodada. Em uma sub rodada, cada jogador joga uma carta com o método joga_carta() e usamos o método verifica_vencedor() para atribuir pontuação a dupla vencedora da sub rodada. 
 
   Nesse momento, assim que uma das duplas atingir uma pontuação de sub rodada igual a 2, atribuímos mais 2 pontos a sua pontuação de rodadas (ESTOU IGNORANDO A POSSIBILIDADE DE PEDIR TRUCO POR ENQUANTO). Assim, se nenhuma das duplas atingir 12 pontos, damos início a outra rodada, que funcionará da mesma forma. Caso uma delas atinja tal pontuação, o laço é encerrado e um jogo é atribuído a dupla. Se, com isso, nenhuma dupla tiver vencido dois jogos, iniciaremos mais um jogo. Caso contrário declaramos a dupla com 2 jogos vencedora da PARTIDA.
 
