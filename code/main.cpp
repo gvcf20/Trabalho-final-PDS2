@@ -31,6 +31,7 @@ int main(){
                 jogo.comeca_rodada(duplas);
 
             }
+        }
 
         if(duplas.first.jogos_vencidos = 2){
             std::cout << "Os Vencedores são: " << duplas.first.duplinha.first.nome_jogador
@@ -41,6 +42,7 @@ int main(){
             << " e "
             << duplas.second.duplinha.second.nome_jogador << std::endl;
         }
+
     }
 
     return 0;
