@@ -16,10 +16,3 @@ void JOGO::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h){
     sub_rodada.verifica_vencedor(duplas_h , cartas_jogadas, 1);
 }
 
-void JOGO::campeao(std::pair <Dupla,Dupla>& duplas_h){
-    if(duplas_h.first.jogos_vencidos = 2){
-        std::cout << "Os grandes vencedores são: "<< duplas_h.first.duplinha.first.nome_jogador << " e " << duplas_h.first.duplinha.second.nome_jogador<< std::endl; 
-    } else{
-        std::cout << "Os grandes vencedores são: "<< duplas_h.second.duplinha.first.nome_jogador << " e " << duplas_h.second.duplinha.second.nome_jogador<< std::endl;
-    }
-}
