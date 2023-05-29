@@ -27,7 +27,9 @@ int main(){
             std::cout << " A PARTIDA VAI COMEÇAR " << std::endl;
 
             JOGO jogo;
-            jogo.comeca_rodada(duplas);
+            while(duplas.first.pontuacao < 12 && duplas.second.pontuacao < 12){
+                jogo.comeca_rodada(duplas);
+            }
 
         }
 
