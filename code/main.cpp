@@ -24,6 +24,8 @@ int main(){
 
 
         while(duplas.first.jogos_vencidos < 2 && duplas.second.jogos_vencidos < 2){
+            std::cout << " A PARTIDA VAI COMEÇAR " << std::endl;
+
             JOGO jogo;
             jogo.comeca_rodada(duplas);
 

@@ -63,7 +63,7 @@ Dupla Sub_Rodada::verifica_vencedor(std::pair<Dupla, Dupla>& duplas, std::vector
     Regras regras;
     std::vector<Carta> mao_maior = regras.maior_carta(cartas_jogadas);
 
-    if(vencedor.vencedor_sub_rodada(cartas_jogadas, duplas)){
+    if(vencedor.vencedor_sub_rodada(cartas_jogadas)){
         
         for(size_t i = 0; i < duplas.first.duplinha.first.mao.size(); ++i){
 
@@ -128,11 +128,13 @@ Dupla Sub_Rodada::verifica_vencedor(std::pair<Dupla, Dupla>& duplas, std::vector
             }
         }
         
-        } else if(vencedor.empate_sub_rodada(cartas_jogadas, duplas)){
+        } else if(vencedor.empate_sub_rodada(cartas_jogadas)){
             
             std::vector<Carta> empate_carta = regras.maior_carta(cartas_jogadas);
             size_t i = empate_carta.size();
-            for(size_t j = 0; j < 4; ++)
+            for(size_t j = 0; j < 4; ++){
+                
+            }
 
     }
 }
