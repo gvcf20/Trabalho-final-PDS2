@@ -132,7 +132,9 @@ Dupla Sub_Rodada::verifica_vencedor(std::pair<Dupla, Dupla>& duplas, std::vector
             
             std::vector<Carta> empate_carta = regras.maior_carta(cartas_jogadas);
             size_t i = empate_carta.size();
-            for(size_t j = 0; j < 4; ++)
+            for(size_t j = 0; j < 4; ++){
+                
+            }
 
     }
 }

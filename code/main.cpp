@@ -23,13 +23,15 @@ int main(){
         exibe_duplas(duplas);
 
         JOGO jogo;
-        while(duplas.first.pontuacao < 12 && duplas.second.pontuacao < 12){
-            jogo.comeca_rodada(duplas);
-            duplas.first.pontuacao +=2;
-        };
-
-        jogo.campeao(duplas);
-
+        if(duplas.first.jogos_vencidos < 2  && duplas.second.jogos_vencidos < 2){
+            while(duplas.first.pontuacao_subrodada < 12 && duplas.second.pontuacao_subrodada < 12){
+                jogo.comeca_rodada(duplas);
+                duplas.first.pontuacao +=2;
+            };
+        } else {
+            jogo.campeao(duplas);
+        }
+    
     }
 
     return 0;
