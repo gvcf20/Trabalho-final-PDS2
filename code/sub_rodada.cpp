@@ -181,4 +181,3 @@ Dupla Sub_Rodada::verifica_vencedor(std::pair<Dupla, Dupla>& duplas, std::vector
 }
     
 
-

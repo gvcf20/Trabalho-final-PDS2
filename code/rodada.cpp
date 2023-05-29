@@ -2,7 +2,7 @@
 #include "../header/cartas.hpp"
 #include "../header/dupla.hpp"
 #include "../header/jogador.hpp"
-#include "embaralhamento.cpp"
+#include "../header/embaralhamento.hpp"
 #include <iostream>
 #include <vector>
 
