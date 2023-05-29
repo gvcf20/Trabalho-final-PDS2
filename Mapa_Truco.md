@@ -2,7 +2,7 @@
 
                 ÚLTIMA ATUALIZAÇÃO 29/05/2023
 
-Ao atuzalizar esse arquivo, atualizar a data e assinar a atuzalição ao final do texto, para que possamos acompanhar o que vem sendo feito. Favor especificar novas classes e funções implementadas
+Ao atuzalizar esse arquivo, atualizar a data e assinar a atuzalição ao final do texto, sem pagar os registros anteriores, para que possamos acompanhar o que vem sendo feito. Favor especificar novas classes e funções implementadas.
 
 
 
@@ -12,9 +12,9 @@ Jogadores: 4 jogadores, cada um terá apenas um nome.
 
 Duplas: 2 duplas, cada uma composta por 2 jogadores. Uma dupla irá armazenar pontuações referentes a: 
   
-   I) Sub rodadas: 0 a 2
-   II) Rodadas: 0 a 12
-   III) Jogos: 0 a 2
+  
+   I) Rodadas: 0 a 12
+   II) Jogos: 0 a 2
 
    Para vencer uma rodada, uma dupla deve vencer 2 de 3 subrodadas. Ao vencer uma rodada a dupla ganha 2 pontos. Em caso de truco a rodada pode valer 4,6,9 ou 12 pontos, conforme os jogadores aceitam apostam.
 
@@ -44,9 +44,9 @@ Função main:
 
   A função começa_rodada() cria uma Rodada rodada. A classe Rodada armazena todos os métodos relativos a uma rodada. Inicialmente, acionamos o método distribui_cartas(duplas) e o método exibe_cartas(). Assim, cada jogador receberá 3 cartas e poderá vê-las. 
 
-  Em seguida, criaremos as sub_rodadas. Necessariamente, haverá 2 sub_rodadas, caso a rodada não termine com 2 sub rodadas, faz-se necessário a criação de uma terceira sub_rodada de desempate. (ATUALMENTE ESTAMOS CRIANDO APENAS UMA SUB RODADA, PRECISAMOS MUDAR A IMPLEMENTAÇÃO DISSO USANDO UM LAÇO QUE VERIFIQUE A PONTUAÇÃO DE SUB RODADAS DE CADA DUPLA).
+  Em seguida, criaremos as sub_rodadas. Necessariamente, haverá 2 sub_rodadas, caso a rodada não termine com 2 sub rodadas, faz-se necessário a criação de uma terceira sub_rodada de desempate. Dentro de uma sub rodada, o processo de pontuação já é feito automaticamente.
 
-  Logo, enquanto a pontuação de sub rodadas de ambas as duplas for menos que 2, coemçaremos uma nova sub rodada. Em uma sub rodada, cada jogador joga uma carta com o método joga_carta() e usamos o método verifica_vencedor() para atribuir pontuação a dupla vencedora da sub rodada (PHILL ESTÁ TRABALHANDO NISSO NESSE EXATO MOMENTO). 
+  Logo, enquanto a pontuação de sub rodadas de ambas as duplas for menor que 2, começaremos uma nova sub rodada. Em uma sub rodada, cada jogador joga uma carta com o método joga_carta() e usamos o método verifica_vencedor() para atribuir pontuação a dupla vencedora da sub rodada (PHILL ESTÁ TRABALHANDO NISSO NESSE EXATO MOMENTO). 
 
   Nesse momento, assim que uma das duplas atingir uma pontuação de sub rodada igual a 2, atribuímos mais 2 pontos a sua pontuação de rodadas (ESTOU IGNORANDO A POSSIBILIDADE DE PEDIR TRUCO POR ENQUANTO). Assim, se nenhuma das duplas atingir 12 pontos, damos início a outra rodada, que funcionará da mesma forma. Caso uma delas atinja tal pontuação, o laço é encerrado e um jogo é atribuído a dupla. Se, com isso, nenhuma dupla tiver vencido dois jogos, iniciaremos mais um jogo. Caso contrário declaramos a dupla com 2 jogos vencedora da PARTIDA.
 

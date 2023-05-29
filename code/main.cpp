@@ -22,16 +22,24 @@ int main(){
         std::pair<Dupla, Dupla> duplas = set_duplas(jogadores);
         exibe_duplas(duplas);
 
-        JOGO jogo;
-        if(duplas.first.jogos_vencidos < 2  && duplas.second.jogos_vencidos < 2){
-            while(duplas.first.pontuacao_subrodada < 12 && duplas.second.pontuacao_subrodada < 12){
-                jogo.comeca_rodada(duplas);
-                duplas.first.pontuacao +=2;
-            };
-        } else {
-            jogo.campeao(duplas);
+
+        while(duplas.first.jogos_vencidos < 2 && duplas.second.jogos_vencidos < 2){
+            std::cout << " A PARTIDA VAI COMEÇAR " << std::endl;
+
+            JOGO jogo;
+            jogo.comeca_rodada(duplas);
+
         }
-    
+
+        if(duplas.first.jogos_vencidos = 2){
+            std::cout << "Os Vencedores são: " << duplas.first.duplinha.first.nome_jogador
+            << " e "
+            << duplas.first.duplinha.second.nome_jogador << std::endl;
+        } else{
+            std::cout << "Os Vencedores são: " << duplas.second.duplinha.first.nome_jogador
+            << " e "
+            << duplas.second.duplinha.second.nome_jogador << std::endl;
+        }
     }
 
     return 0;
