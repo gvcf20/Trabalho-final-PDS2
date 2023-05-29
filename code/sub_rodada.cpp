@@ -77,6 +77,7 @@ Dupla Sub_Rodada::verifica_vencedor(std::pair<Dupla, Dupla>& duplas, std::vector
                     pontuacao_sub_rodada_dupla1 = pontuacao_sub_rodada_dupla1 + 3;
                 } else{
                     std::cout <<"Número de sub_rodadas inválidas!!!! " << std::endl;
+                    return;
                 }
             }
         }
@@ -93,6 +94,7 @@ Dupla Sub_Rodada::verifica_vencedor(std::pair<Dupla, Dupla>& duplas, std::vector
                     pontuacao_sub_rodada_dupla1 = pontuacao_sub_rodada_dupla1 + 3;
                 } else{
                     std::cout <<"Número de sub_rodadas inválidas!!!! " << std::endl;
+                    return;
                 }
             }
         }
@@ -109,6 +111,7 @@ Dupla Sub_Rodada::verifica_vencedor(std::pair<Dupla, Dupla>& duplas, std::vector
                     pontuacao_sub_rodada_dupla2 = pontuacao_sub_rodada_dupla1 + 3;
                 } else{
                     std::cout <<"Número de sub_rodadas inválidas!!!! " << std::endl;
+                    return;
                 }
             }
         }
@@ -124,6 +127,7 @@ Dupla Sub_Rodada::verifica_vencedor(std::pair<Dupla, Dupla>& duplas, std::vector
                     pontuacao_sub_rodada_dupla2 = pontuacao_sub_rodada_dupla1 + 3;
                 } else{
                     std::cout <<"Número de sub_rodadas inválidas!!!! " << std::endl;
+                    return;
                 }
             }
         }
@@ -132,12 +136,48 @@ Dupla Sub_Rodada::verifica_vencedor(std::pair<Dupla, Dupla>& duplas, std::vector
             
             std::vector<Carta> empate_carta = regras.maior_carta(cartas_jogadas);
             size_t i = empate_carta.size();
-            for(size_t j = 0; j < 4; ++){
-                
+            for(size_t j = 0; j < 4; ++j){
+                if(empate_carta[0] == duplas.first.duplinha.first.mao[j] && empate_carta[0] == duplas.second.duplinha.first.mao[j]
+                || empate_carta[0] == duplas.first.duplinha.first.mao[j] && empate_carta[0] == duplas.second.duplinha.second.mao[j]){
+                    pontuacao_sub_rodada_dupla1 +=2;
+                    pontuacao_sub_rodada_dupla2 +=2;
+        }
+
+                else if(empate_carta[0] == duplas.first.duplinha.second.mao[j] && empate_carta[0] == duplas.second.duplinha.first.mao[j]
+                || empate_carta[0] == duplas.first.duplinha.second.mao[j] && empate_carta[0] == duplas.second.duplinha.second.mao[j]){
+                    pontuacao_sub_rodada_dupla1 +=2;
+                    pontuacao_sub_rodada_dupla2 +=2;
+        }
+                else if(empate_carta[0] == duplas.first.duplinha.first.mao[j] && empate_carta[0] == duplas.first.duplinha.second.mao[j]){
+                    
+                    std::cout << "A dupla 1 foi a ganhadora da " << pt << "° sub_rodada" << std::endl;
+                if(pt == 1){
+                    pontuacao_sub_rodada_dupla1 = pontuacao_sub_rodada_dupla1 + 3;
+                } else if(pt == 2){
+                    pontuacao_sub_rodada_dupla1 = pontuacao_sub_rodada_dupla1 + 2;
+                } else if(pt == 3){
+                    pontuacao_sub_rodada_dupla1 = pontuacao_sub_rodada_dupla1 + 3;
+                } else{
+                    std::cout <<"Número de sub_rodadas inválidas!!!! " << std::endl;
+                    return;
+                }
+            }
+            else if(empate_carta[0] == duplas.second.duplinha.first.mao[j] && empate_carta[0] == duplas.second.duplinha.second.mao[j]){
+                    std::cout << "A dupla 2 foi a ganhadora da " << pt << "° sub_rodada" << std::endl;
+                if(pt == 1){
+                    pontuacao_sub_rodada_dupla2 = pontuacao_sub_rodada_dupla1 + 3;
+                } else if(pt == 2){
+                    pontuacao_sub_rodada_dupla2 = pontuacao_sub_rodada_dupla1 + 2;
+                } else if(pt == 3){
+                    pontuacao_sub_rodada_dupla2 = pontuacao_sub_rodada_dupla1 + 3;
+                } else{
+                    std::cout <<"Número de sub_rodadas inválidas!!!! " << std::endl;
+                    return;
+                }
             }
 
+        }
     }
 }
     
-
 

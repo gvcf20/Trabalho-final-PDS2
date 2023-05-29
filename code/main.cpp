@@ -29,10 +29,8 @@ int main(){
             JOGO jogo;
             while(duplas.first.pontuacao < 12 && duplas.second.pontuacao < 12){
                 jogo.comeca_rodada(duplas);
-            }
-    
 
-        }
+            }
 
         if(duplas.first.jogos_vencidos = 2){
             std::cout << "Os Vencedores são: " << duplas.first.duplinha.first.nome_jogador

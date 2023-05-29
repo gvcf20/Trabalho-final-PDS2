@@ -12,5 +12,4 @@ class Dupla {
     unsigned int jogos_vencidos = 0;
 
 };
-
 #endif
