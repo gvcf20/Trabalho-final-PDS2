@@ -2,7 +2,7 @@
 
                 ÚLTIMA ATUALIZAÇÃO 29/05/2023
 
-Ao atuzalizar esse arquivo, atualizar a data e assinar a atuzalição ao final do texto, para que possamos acompanhar o que vem sendo feito. Favor especificar novas classes e funções implementadas
+Ao atuzalizar esse arquivo, atualizar a data e assinar a atuzalição ao final do texto, sem pagar os registros anteriores, para que possamos acompanhar o que vem sendo feito. Favor especificar novas classes e funções implementadas.
 
 
 
