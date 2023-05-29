@@ -10,6 +10,7 @@ class JOGO{
     public:
     std::pair<Dupla,Dupla> duplas;
     void comeca_rodada(std::pair <Dupla,Dupla>& duplas_h);
+    void campeao(std::pair <Dupla,Dupla>& duplas_h);
     private:
 
 };
