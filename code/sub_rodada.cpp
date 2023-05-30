@@ -81,7 +81,7 @@ Dupla Sub_Rodada::verifica_vencedor(std::pair<Dupla, Dupla>& duplas, std::vector
                 }
             }
         }
-
+    }
         for(size_t i = 0; i < duplas.first.duplinha.first.mao.size(); ++i){
 
             if(mao_maior[0] == duplas.first.duplinha.second.mao[i]){
@@ -97,7 +97,7 @@ Dupla Sub_Rodada::verifica_vencedor(std::pair<Dupla, Dupla>& duplas, std::vector
                     return;
                 }
             }
-        }
+        
 
         for(size_t i = 0; i < duplas.first.duplinha.first.mao.size(); ++i){
 
@@ -131,7 +131,7 @@ Dupla Sub_Rodada::verifica_vencedor(std::pair<Dupla, Dupla>& duplas, std::vector
                 }
             }
         }
-        
+     
         } else if(vencedor.empate_sub_rodada(cartas_jogadas)){
             
             std::vector<Carta> empate_carta = regras.maior_carta(cartas_jogadas);
