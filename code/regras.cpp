@@ -1,11 +1,12 @@
 #include "../header/cartas.hpp"
 #include "../header/regras.hpp"
+#include "../header/dupla.hpp"
 #include <iostream>
 
 std::vector<Carta> Regras::maior_carta(std::vector<Carta>& cartas){
     int min,minimal;
     std::vector <Carta> maior_carta;
-    cartas[0].peso = min;
+    min = cartas[0].peso;
     for(std::size_t i = 0; i < cartas.size(); i++){
         if (cartas[i].peso < min){
             minimal = min;
@@ -33,19 +34,18 @@ bool Vencedor::empate_sub_rodada(std::vector<Carta> mao_rodada){
     size_t i = 1;
     return mao_rodada.size() != i;
 }
-std::pair<Jogador, std::vector<Carta>> Vencedor::verifica_casos(std::vector<Carta> mao_rodada, std::pair<Dupla,Dupla> duplas){
+std::pair<Jogador, std::vector<Carta>> Vencedor::verifica_vencedor_SR(std::vector<Carta> mao_rodada, std::pair<Dupla,Dupla>& duplas){
 
     Regras regras;
     std::pair<Jogador, std::vector<Carta>> dupla_winner;
     std::vector<Carta> mao_ganhadora = regras.maior_carta(mao_rodada);
     int j;
-    if(vencedor_sub_rodada(mao_rodada) == true){
 
-        for(size_t i = 0; i < mao_rodada.size(); ++i){
-            if(mao_ganhadora[0] == mao_rodada[i]){
-                j = i;
-            }
+    for(size_t i = 0; i < mao_rodada.size(); ++i){
+        if(mao_ganhadora[0] == mao_rodada[i]){
+            j = i;
         }
+    }
         if(j == 0){
             dupla_winner.first = duplas.first.duplinha.first;
             dupla_winner.second = mao_ganhadora;
@@ -59,8 +59,185 @@ std::pair<Jogador, std::vector<Carta>> Vencedor::verifica_casos(std::vector<Cart
             dupla_winner.first = duplas.second.duplinha.first;
             dupla_winner.second = mao_ganhadora;
         }
-    } else{
 
+    return dupla_winner;
+}
+
+std::pair<Dupla, std::vector<Carta>> Vencedor::verifica_empate_SR(std::vector<Carta> mao_rodada, std::pair<Dupla,Dupla>& duplas){
+
+    Regras regras;
+    std::pair<Dupla, std::vector<Carta>> dupla_empate;
+    std::vector<Carta> mao_empate = regras.maior_carta(mao_rodada);
+
+    if(mao_empate[0].peso == mao_rodada[0].peso && mao_empate[0].peso == mao_rodada[2].peso){
+            
+        dupla_empate.first.duplinha.first = duplas.first.duplinha.first;
+        dupla_empate.first.duplinha.second = duplas.second.duplinha.first;
+        dupla_empate.second.push_back(mao_empate[0]);
+        dupla_empate.second.push_back(mao_empate[1]);
+    }
+    else if(mao_empate[0].peso == mao_rodada[0].peso && mao_empate[0].peso == mao_rodada[3].peso){
+        
+        dupla_empate.first.duplinha.first = duplas.first.duplinha.first;
+        dupla_empate.first.duplinha.second = duplas.second.duplinha.second;
+        dupla_empate.second.push_back(mao_empate[0]);
+        dupla_empate.second.push_back(mao_empate[1]);
     }
 
+    else if(mao_empate[0].peso == mao_rodada[1].peso && mao_empate[0].peso == mao_rodada[2].peso){
+
+        dupla_empate.first.duplinha.first = duplas.first.duplinha.second;
+        dupla_empate.first.duplinha.second = duplas.second.duplinha.first;
+        dupla_empate.second.push_back(mao_empate[0]);
+        dupla_empate.second.push_back(mao_empate[1]);
+    }
+    else if(mao_empate[0].peso == mao_rodada[1].peso && mao_empate[0].peso == mao_rodada[3].peso){
+        
+        dupla_empate.first.duplinha.first = duplas.first.duplinha.second;
+        dupla_empate.first.duplinha.second = duplas.second.duplinha.second;
+        dupla_empate.second.push_back(mao_empate[0]);
+        dupla_empate.second.push_back(mao_empate[1]);
+    }
+    else if(mao_empate[0].peso == mao_rodada[0].peso && mao_empate[0].peso == mao_rodada[1].peso){
+
+        dupla_empate.first.duplinha.first = duplas.first.duplinha.first;
+        dupla_empate.first.duplinha.second = duplas.first.duplinha.second;
+        dupla_empate.second.push_back(mao_empate[0]);
+        dupla_empate.second.push_back(mao_empate[1]);
+    }
+    else if(mao_empate[0].peso == mao_rodada[2].peso && mao_empate[0].peso == mao_rodada[3].peso){
+
+        dupla_empate.first.duplinha.first = duplas.second.duplinha.first;
+        dupla_empate.first.duplinha.second = duplas.second.duplinha.second;
+        dupla_empate.second.push_back(mao_empate[0]);
+        dupla_empate.second.push_back(mao_empate[1]);
+    }
+
+    return dupla_empate;   
+
+}
+
+std::pair<unsigned int, unsigned int> Vencedor::pontos_sub_rodada_vencedor(std::pair<Dupla, Dupla>& duplas, std::vector<Carta>& cartas_jogadas, unsigned pt){
+
+    Vencedor vencedor;
+    Regras regras;
+    Sub_Rodada sub;
+    std::vector<Carta> mao_maior = regras.maior_carta(cartas_jogadas);
+    std::pair<unsigned int, unsigned int> pontuacao_sub_rodada;
+
+    if(vencedor.vencedor_sub_rodada(cartas_jogadas)){
+        
+        if(mao_maior[0] == cartas_jogadas[0]){
+            std::cout << "A dupla 1 foi a ganhadora da " << pt << "° sub_rodada" << std::endl;
+            if(pt == 1){
+                pontuacao_sub_rodada.first = pontuacao_sub_rodada.first + 3;
+            } else if(pt == 2){
+                pontuacao_sub_rodada.first = pontuacao_sub_rodada.first + 2;
+            } else if(pt == 3){
+                pontuacao_sub_rodada.first = pontuacao_sub_rodada.first + 3;
+            } else{
+                std::cout <<"Número de sub_rodadas inválidas!!!! " << std::endl;
+                return;  
+            }
+        }
+
+        if(mao_maior[0] == cartas_jogadas[1]){
+            std::cout << "A dupla 1 foi a ganhadora da " << pt << "° sub_rodada" << std::endl;
+            if(pt == 1){
+                pontuacao_sub_rodada.first = pontuacao_sub_rodada.first + 3;
+            } else if(pt == 2){
+                pontuacao_sub_rodada.first = pontuacao_sub_rodada.first + 2;
+            } else if(pt == 3){
+                pontuacao_sub_rodada.first = pontuacao_sub_rodada.first + 3;
+            } else{
+                std::cout <<"Número de sub_rodadas inválidas!!!! " << std::endl;
+                return;
+            }
+        }
+
+        if(mao_maior[0] == cartas_jogadas[2]){
+            std::cout << "A dupla 2 foi a ganhadora da " << pt << "° sub_rodada" << std::endl;
+            if(pt == 1){
+                pontuacao_sub_rodada.second = pontuacao_sub_rodada.second + 3;
+            } else if(pt == 2){
+                pontuacao_sub_rodada.second = pontuacao_sub_rodada.second + 2;
+            } else if(pt == 3){
+                pontuacao_sub_rodada.second = pontuacao_sub_rodada.second + 3;
+            } else{
+                std::cout <<"Número de sub_rodadas inválidas!!!! " << std::endl;
+                return;
+            }
+        }
+
+        if(mao_maior[0] == cartas_jogadas[3]){
+            std::cout << "A dupla 2 foi a ganhadora da " << pt << "° sub_rodada" << std::endl;
+            if(pt == 1){
+                pontuacao_sub_rodada.second = pontuacao_sub_rodada.second + 3;
+            } else if(pt == 2){
+                pontuacao_sub_rodada.second = pontuacao_sub_rodada.second + 2;
+            } else if(pt == 3){
+                pontuacao_sub_rodada.second = pontuacao_sub_rodada.second + 3;
+            } else{
+                std::cout <<"Número de sub_rodadas inválidas!!!! " << std::endl;
+                return;
+            }
+        }
+        return pontuacao_sub_rodada;
+    }
+}
+    std::pair<unsigned int, unsigned int> Vencedor::pontos_sub_rodada_empate(std::pair<Dupla, Dupla>& duplas, std::vector<Carta>& cartas_jogadas, unsigned pt){   
+    
+    Vencedor vencedor;
+    Regras regras;
+    Sub_Rodada sub;
+    std::vector<Carta> mao_maior = regras.maior_carta(cartas_jogadas);
+    std::pair<unsigned int, unsigned int> pontuacao_sub_rodada;
+    pontuacao_sub_rodada.first = 0;
+    pontuacao_sub_rodada.second = 0;
+    if(vencedor.empate_sub_rodada(cartas_jogadas)){
+
+        std::vector<Carta> empate_carta = regras.maior_carta(cartas_jogadas);
+        size_t i = empate_carta.size();
+
+            if(empate_carta[0].peso == cartas_jogadas[0].peso && empate_carta[0].peso == cartas_jogadas[2].peso
+            || empate_carta[0].peso == cartas_jogadas[0].peso && empate_carta[0].peso == cartas_jogadas[3].peso){
+                pontuacao_sub_rodada.first +=2;
+                pontuacao_sub_rodada.second +=2;
+            }
+
+            else if(empate_carta[0].peso == cartas_jogadas[1].peso && empate_carta[0].peso == cartas_jogadas[2].peso
+            || empate_carta[0].peso == cartas_jogadas[1].peso && empate_carta[0].peso == cartas_jogadas[3].peso){
+                pontuacao_sub_rodada.first +=2;
+                pontuacao_sub_rodada.second +=2;
+            }
+            else if(empate_carta[0].peso == cartas_jogadas[0].peso && empate_carta[0].peso == cartas_jogadas[1].peso){
+                    
+                std::cout << "A dupla 1 foi a ganhadora da " << pt << "° sub_rodada" << std::endl;
+                if(pt == 1){
+                    pontuacao_sub_rodada.first = pontuacao_sub_rodada.first + 3;
+                } else if(pt == 2){
+                    pontuacao_sub_rodada.first = pontuacao_sub_rodada.first + 2;
+                } else if(pt == 3){
+                    pontuacao_sub_rodada.first = pontuacao_sub_rodada.first + 3;
+                } else{
+                    std::cout <<"Número de sub_rodadas inválidas!!!! " << std::endl;
+                    return;
+                }
+            }
+            else if(empate_carta[0].peso == cartas_jogadas[2].peso && empate_carta[0].peso == cartas_jogadas[3].peso){
+                    std::cout << "A dupla 2 foi a ganhadora da " << pt << "° sub_rodada" << std::endl;
+                if(pt == 1){
+                    pontuacao_sub_rodada.second = pontuacao_sub_rodada.second + 3;
+                } else if(pt == 2){
+                    pontuacao_sub_rodada.second = pontuacao_sub_rodada.second + 2;
+                } else if(pt == 3){
+                    pontuacao_sub_rodada.second = pontuacao_sub_rodada.second + 3;
+                } else{
+                    std::cout <<"Número de sub_rodadas inválidas!!!! " << std::endl;
+                    return;
+        
+            }
+            return pontuacao_sub_rodada;
+        }
+    }
 }

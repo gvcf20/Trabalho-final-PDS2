@@ -8,8 +8,8 @@
 
 class JOGO{
     public:
-    std::pair<Dupla,Dupla> duplas;
-    void comeca_rodada(std::pair <Dupla,Dupla>& duplas_h);
+    
+    void comeca_jogo(std::pair <Dupla,Dupla>& duplas_h);
     private:
 
 };

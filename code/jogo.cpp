@@ -3,7 +3,7 @@
 #include <vector>
 #include <iostream>
 
-std::vector<Jogador> cadastro_jogadores(){
+std::vector<Jogador>& cadastro_jogadores(){
     std::vector<Jogador> Jogadores;
     std::cout << "Vamos cadastrar os jogadores" << std::endl; 
     while(Jogadores.size() < 5){
@@ -19,7 +19,7 @@ void exibe_jogadores(const std::vector<Jogador> jogs){
     }
 }
 
-std::pair<Dupla, Dupla> set_duplas(std::vector<Jogador> jogadoress){
+std::pair<Dupla, Dupla> set_duplas(std::vector<Jogador>& jogadoress){
     Dupla d1;
     Dupla d2;
     d1.duplinha.first = jogadoress[1];
