@@ -2,7 +2,9 @@
 #include "../header/cartas.hpp"
 #include "../header/dupla.hpp"
 #include "../header/jogador.hpp"
-#include "../header/embaralhamento.hpp"
+#include "../header/sub_rodada.hpp"
+#include "embaralhamento.cpp"
+#include "regras.cpp"
 #include <iostream>
 #include <vector>
 
@@ -50,4 +52,69 @@ void Rodada::exibe_cartas(std::pair<Dupla, Dupla> duplas){
     }
 }
 
+void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h){
+    
+    Regras regras;
+    Rodada rodada;
+    Vencedor vencedor;
+    unsigned ptl = 1;
+    unsigned indice = 2;
+    std::pair<Jogador, std::vector<Carta>> jogador_vencedor_SR;
+    std::pair<Dupla, std::vector<Carta>> Dupla_empate_SR;
+    std::pair<unsigned int, unsigned int> pontuacao_SR;
+
+    rodada.distribui_cartas(duplas_h);
+    rodada.exibe_cartas(duplas_h);
+    Sub_Rodada sub_rodada;
+
+     while(sub_rodada.pontuacao_sub_rodada_dupla1 < 5 || sub_rodada.pontuacao_sub_rodada_dupla2 < 5){
+        
+        
+        std::vector<Carta> cartas_jogadas;
+        cartas_jogadas = sub_rodada.joga_carta(duplas_h, indice);
+        std::vector<Carta>maior_carta = regras.maior_carta(cartas_jogadas);
+
+        if(vencedor.vencedor_sub_rodada(maior_carta)){
+            jogador_vencedor_SR = vencedor.verifica_vencedor_SR(maior_carta, duplas_h);
+            pontuacao_SR = vencedor.pontos_sub_rodada_vencedor(duplas_h , cartas_jogadas, ptl);
+
+            std::cout <<"O jogador: " << jogador_vencedor_SR.first.nome_jogador <<
+            " ganhou a partida com a carta: " << jogador_vencedor_SR.second[0].toString() << std::endl;
+        }
+
+        else if(vencedor.empate_sub_rodada(maior_carta)){
+            Dupla_empate_SR = vencedor.verifica_empate_SR(maior_carta, duplas_h);
+            pontuacao_SR = vencedor.pontos_sub_rodada_vencedor(duplas_h , cartas_jogadas, ptl);
+
+            if(Dupla_empate_SR.first.duplinha.first.nome_jogador != duplas_h.first.duplinha.first.nome_jogador
+            && Dupla_empate_SR.first.duplinha.second.nome_jogador != duplas_h.first.duplinha.second.nome_jogador
+            || Dupla_empate_SR.first.duplinha.first.nome_jogador != duplas_h.second.duplinha.first.nome_jogador
+            && Dupla_empate_SR.first.duplinha.second.nome_jogador != duplas_h.second.duplinha.second.nome_jogador){
+                
+                std::cout << "Houve um empate entre os jogadores: " << Dupla_empate_SR.first.duplinha.first.nome_jogador 
+                << " e " << Dupla_empate_SR.first.duplinha.second.nome_jogador << ", devido a terem jogado as cartas: "
+                << Dupla_empate_SR.second[0].toString() << " e " << Dupla_empate_SR.second[1].toString()
+                << " que detém o mesmo peso. " << std::endl;
+            }
+            else{
+                std::cout << "Não houve um empate entre os jogadores: " << Dupla_empate_SR.first.duplinha.first.nome_jogador 
+                << " e " << Dupla_empate_SR.first.duplinha.second.nome_jogador << ", devido a terem jogado as cartas: "
+                << Dupla_empate_SR.second[0].toString() << " e " << Dupla_empate_SR.second[1].toString()
+                << " pois pertecem a mesma dupla. " << std::endl;
+            }
+
+        }
+        
+        sub_rodada.pontuacao_sub_rodada_dupla1 += pontuacao_SR.first;
+        sub_rodada.pontuacao_sub_rodada_dupla2 += pontuacao_SR.second;
+        indice -= 1;
+        ptl = ptl + 1;
+
+    }
+     if(sub_rodada.pontuacao_sub_rodada_dupla1 >= 5){
+         duplas_h.first.pontuacao += 2;
+     } else if (sub_rodada.pontuacao_sub_rodada_dupla2 >= 5){
+         duplas_h.second.pontuacao += 2;
+    }
+}
 
