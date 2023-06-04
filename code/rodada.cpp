@@ -61,19 +61,29 @@ void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h){
     std::pair<Jogador, std::vector<Carta>> jogador_vencedor_SR;
     std::pair<Dupla, std::vector<Carta>> Dupla_empate_SR;
     std::pair<unsigned int, unsigned int> pontuacao_SR;
-
+    pontuacao_SR.first = 0;
+    pontuacao_SR.second = 0;
     rodada.distribui_cartas(duplas_h);
-    rodada.exibe_cartas(duplas_h);
     Sub_Rodada sub_rodada;
 
      while(sub_rodada.pontuacao_sub_rodada_dupla1 < 5 || sub_rodada.pontuacao_sub_rodada_dupla2 < 5){
         
-        
+        rodada.exibe_cartas(duplas_h);
         std::vector<Carta> cartas_jogadas;
         cartas_jogadas = sub_rodada.joga_carta(duplas_h, indice);
         std::vector<Carta>maior_carta = regras.maior_carta(cartas_jogadas);
 
-        if(vencedor.vencedor_sub_rodada(maior_carta)){
+        for(size_t i = 0; i < maior_carta.size(); ++i){
+            std::cout << "A maior carta foi " <<maior_carta[i].toString() << std::endl;
+        }
+        
+        bool condicao;
+        condicao = vencedor.vencedor_sub_rodada(maior_carta);
+        bool condicao1;
+        condicao1 = vencedor.empate_sub_rodada(maior_carta);
+
+        if(condicao){
+            std::cout << "oi" << std::endl;
             jogador_vencedor_SR = vencedor.verifica_vencedor_SR(maior_carta, duplas_h);
             pontuacao_SR = vencedor.pontos_sub_rodada_vencedor(duplas_h , cartas_jogadas, ptl);
 
@@ -81,7 +91,7 @@ void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h){
             " ganhou a partida com a carta: " << jogador_vencedor_SR.second[0].toString() << std::endl;
         }
 
-        else if(vencedor.empate_sub_rodada(maior_carta)){
+        else if(condicao1){
             Dupla_empate_SR = vencedor.verifica_empate_SR(maior_carta, duplas_h);
             pontuacao_SR = vencedor.pontos_sub_rodada_vencedor(duplas_h , cartas_jogadas, ptl);
 

@@ -6,39 +6,46 @@ std::vector<Carta> Regras::maior_carta(std::vector<Carta>& cartas){
     int min,minimal;
     std::vector <Carta> maior_carta;
     min = cartas[0].peso;
-    for(std::size_t i = 0; i < cartas.size(); i++){
+    for(std::size_t i = 0; i < cartas.size(); ++i){
         if (cartas[i].peso < min){
-            minimal = min;
+            minimal = cartas[i].peso;
+            min = cartas[i].peso;
         }
     }
     for(std::size_t i = 0; i < cartas.size(); i++){
-        if(minimal = cartas[i].peso){
+        if(minimal == cartas[i].peso){
             maior_carta.push_back(cartas[i]);
+            
         }
     }
     return maior_carta;
     
 }
 
- bool Vencedor::vencedor_sub_rodada(std::vector<Carta> mao_rodada){
+ bool Vencedor::vencedor_sub_rodada(std::vector<Carta>& mao_rodada){
     Regras regras;
     std::vector<Carta> maior_carta = regras.maior_carta(mao_rodada);
-    size_t i = 1;
-    return mao_rodada.size() == i;
+    
+    if(maior_carta.size() == 1){
+        return true;
+    } else return false;
 }
 
-bool Vencedor::empate_sub_rodada(std::vector<Carta> mao_rodada){
+bool Vencedor::empate_sub_rodada(std::vector<Carta>& mao_rodada){
     Regras regras;
     std::vector<Carta> maior_carta = regras.maior_carta(mao_rodada);
-    size_t i = 1;
-    return mao_rodada.size() != i;
+    return true;
+    if(maior_carta.size() > 1){
+        return true;
+    } else return false;
 }
-std::pair<Jogador, std::vector<Carta>> Vencedor::verifica_vencedor_SR(std::vector<Carta> mao_rodada, std::pair<Dupla,Dupla>& duplas){
+
+std::pair<Jogador, std::vector<Carta>> Vencedor::verifica_vencedor_SR(std::vector<Carta>& mao_rodada, std::pair<Dupla,Dupla>& duplas){
 
     Regras regras;
     std::pair<Jogador, std::vector<Carta>> dupla_winner;
     std::vector<Carta> mao_ganhadora = regras.maior_carta(mao_rodada);
-    int j;
+    size_t j;
 
     for(size_t i = 0; i < mao_rodada.size(); ++i){
         if(mao_ganhadora[0] == mao_rodada[i]){
@@ -62,7 +69,7 @@ std::pair<Jogador, std::vector<Carta>> Vencedor::verifica_vencedor_SR(std::vecto
     return dupla_winner;
 }
 
-std::pair<Dupla, std::vector<Carta>> Vencedor::verifica_empate_SR(std::vector<Carta> mao_rodada, std::pair<Dupla,Dupla>& duplas){
+std::pair<Dupla, std::vector<Carta>> Vencedor::verifica_empate_SR(std::vector<Carta>& mao_rodada, std::pair<Dupla,Dupla>& duplas){
 
     Regras regras;
     std::pair<Dupla, std::vector<Carta>> dupla_empate;
@@ -123,6 +130,8 @@ std::pair<unsigned, unsigned> Vencedor::pontos_sub_rodada_vencedor(std::pair<Dup
     Sub_Rodada sub;
     std::vector<Carta> mao_maior = regras.maior_carta(cartas_jogadas);
     std::pair<unsigned, unsigned> pontuacao_sub_rodada;
+    pontuacao_sub_rodada.first = 0;
+    pontuacao_sub_rodada.second = 0;
 
     if(vencedor.vencedor_sub_rodada(cartas_jogadas)){
         
