@@ -1,9 +1,11 @@
 #include "../header/jogo.hpp"
-#include "../header/rodada.hpp"
-#include "../header/jogador.hpp"
 #include "../header/sub_rodada.hpp"
 #include "../header/dupla.hpp"
+#include "../header/cartas.hpp"
+#include "embaralhamento.cpp"
+#include "jogo.cpp"
 #include "regras.cpp"
+
 #include <iostream>
 #include <string>
 #include <vector>
