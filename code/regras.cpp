@@ -183,8 +183,12 @@ std::pair<unsigned, unsigned> Vencedor::pontos_sub_rodada_vencedor(std::pair<Dup
         }
         return pontuacao_sub_rodada;
     }
+
+    return pontuacao_sub_rodada;
 }
-    std::pair<unsigned, unsigned> Vencedor::pontos_sub_rodada_empate(std::pair<Dupla, Dupla>& duplas, std::vector<Carta>& cartas_jogadas, unsigned pt){   
+
+
+std::pair<unsigned, unsigned> Vencedor::pontos_sub_rodada_empate(std::pair<Dupla, Dupla>& duplas, std::vector<Carta>& cartas_jogadas, unsigned pt){   
     
     Vencedor vencedor;
     Regras regras;
@@ -234,9 +238,14 @@ std::pair<unsigned, unsigned> Vencedor::pontos_sub_rodada_vencedor(std::pair<Dup
                 } else{
                     std::cout <<"Número de sub_rodadas inválidas!!!! " << std::endl;
                     return pontuacao_sub_rodada;
-        
+                }
+                return pontuacao_sub_rodada;
             }
-            return pontuacao_sub_rodada;
-        }
+        return pontuacao_sub_rodada;
+
+       
     }
-}
+
+    return pontuacao_sub_rodada;    
+
+}          
