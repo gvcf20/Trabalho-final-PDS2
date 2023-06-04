@@ -1,7 +1,5 @@
-#include "../header/cartas.hpp"
 #include "../header/regras.hpp"
 #include "../header/sub_rodada.hpp"
-#include "../header/dupla.hpp"
 #include <iostream>
 
 std::vector<Carta> Regras::maior_carta(std::vector<Carta>& cartas){
