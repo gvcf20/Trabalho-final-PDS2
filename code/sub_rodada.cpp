@@ -1,10 +1,6 @@
 #include "../header/jogo.hpp"
 #include "../header/sub_rodada.hpp"
 #include "../header/dupla.hpp"
-#include "../header/cartas.hpp"
-#include "embaralhamento.cpp"
-#include "jogo.cpp"
-#include "regras.cpp"
 
 #include <iostream>
 #include <string>
@@ -45,6 +41,7 @@ std::vector<Carta> Sub_Rodada::joga_carta(std::pair<Dupla, Dupla>& duplas, unsig
     duplas.second.duplinha.second.mao.erase(duplas.second.duplinha.second.mao.begin() + i4);
     
     std::cout << "Cartas das mãos dos jogares: " << std::endl;
+    std::cout << std::endl;
     rodada.exibe_cartas(duplas);
     std::cout << "Cartas jogadas: " << std::endl;
     std::cout << duplas.first.duplinha.first.nome_jogador << ": " << mao_rodada[0].toString() << std::endl;

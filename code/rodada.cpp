@@ -1,7 +1,9 @@
 #include "../header/rodada.hpp"
-#include "../header/cartas.hpp"
+#include "../header/sub_rodada.hpp"
+#include "../header/embaralhamento.hpp"
 #include "../header/dupla.hpp"
-#include "sub_rodada.cpp"
+#include "../header/regras.hpp"
+
 #include <iostream>
 #include <vector>
 

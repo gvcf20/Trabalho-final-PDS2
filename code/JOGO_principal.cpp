@@ -1,7 +1,6 @@
 #include "../header/jogo.hpp"
 #include "../header/JOGO_principal.hpp"
-#include "../header/sub_rodada.hpp"
-#include "rodada.cpp"
+#include "../header/rodada.hpp"
 #include <iostream>
 #include <vector>
 

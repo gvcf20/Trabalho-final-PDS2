@@ -1,7 +1,7 @@
 #ifndef RODADA_H
 #define RODADA_H
-#include "jogo.hpp"
-#include "JOGO_principal.hpp"
+#include "sub_rodada.hpp"
+#include "dupla.hpp"
 #include <vector>
 
 class Rodada{
