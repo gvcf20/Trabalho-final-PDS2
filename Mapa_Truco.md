@@ -44,9 +44,9 @@ Função main:
 
   A função começa_rodada() cria uma Rodada rodada. A classe Rodada armazena todos os métodos relativos a uma rodada. Inicialmente, acionamos o método distribui_cartas(duplas) e o método exibe_cartas(). Assim, cada jogador receberá 3 cartas e poderá vê-las. 
 
-  Em seguida, criaremos as sub_rodadas. Necessariamente, haverá 2 sub_rodadas, caso a rodada não termine com 2 sub rodadas, faz-se necessário a criação de uma terceira sub_rodada de desempate. Dentro de uma sub rodada, o processo de pontuação já é feito automaticamente.
+  Em seguida, criaremos as sub_rodadas. Necessariamente, haverá 2 sub_rodadas, caso a rodada não termine com 2 sub rodadas, faz-se necessário a criação de uma terceira sub_rodada de desempate. Dentro de uma sub rodada, o processo de pontuação já é feito automaticamente. 
 
-  Logo, enquanto a pontuação de sub rodadas de ambas as duplas for menor que 2, começaremos uma nova sub rodada. Em uma sub rodada, cada jogador joga uma carta com o método joga_carta() e usamos o método verifica_vencedor() para atribuir pontuação a dupla vencedora da sub rodada (PHILL ESTÁ TRABALHANDO NISSO NESSE EXATO MOMENTO). 
+  Logo, enquanto a pontuação de sub rodadas de ambas as duplas for menor que 2, começaremos uma nova sub rodada. Em uma sub rodada, cada jogador joga uma carta com o método joga_carta() e usamos o método verifica_vencedor() para atribuir pontuação a dupla vencedora da sub rodada. (PRECISAMOS ALTERAR A ATRIBUIÇÃO DE PONTUAÇÃO AO FINAL DA SUB RODADA PARA UM PONTEIRO)
 
   Nesse momento, assim que uma das duplas atingir uma pontuação de sub rodada igual a 2, atribuímos mais 2 pontos a sua pontuação de rodadas (ESTOU IGNORANDO A POSSIBILIDADE DE PEDIR TRUCO POR ENQUANTO). Assim, se nenhuma das duplas atingir 12 pontos, damos início a outra rodada, que funcionará da mesma forma. Caso uma delas atinja tal pontuação, o laço é encerrado e um jogo é atribuído a dupla. Se, com isso, nenhuma dupla tiver vencido dois jogos, iniciaremos mais um jogo. Caso contrário declaramos a dupla com 2 jogos vencedora da PARTIDA.
 
@@ -62,3 +62,5 @@ Esse mapa mental visa mapear a implementação de uma partida de truco. Por enqu
 
 
 DATA DE ATUALIZAÇÃO: 29/05/2023 GABRIEL VAZ
+
+Ainda falta:implementação dos pedidos de truco.

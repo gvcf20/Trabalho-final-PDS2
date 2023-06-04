@@ -1,10 +1,4 @@
-
-#include "../header/cartas.hpp"
-#include "../header/jogo.hpp"
-#include "../header/JOGO_principal.hpp"
-#include "../header/rodada.hpp"
-#include "../header/embaralhamento.hpp"
-#include "../header/rodada.hpp"
+#include "JOGO_principal.cpp"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -17,6 +11,7 @@ int main(){
     std::cin >> c;
     std::cout << std::endl;
     if(c == 'Y'){
+        
         std::vector<Jogador> jogadores = cadastro_jogadores();
         exibe_jogadores(jogadores);
         std::pair<Dupla, Dupla> duplas = set_duplas(jogadores);
