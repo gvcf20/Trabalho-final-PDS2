@@ -71,7 +71,8 @@ void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h){
         rodada.exibe_cartas(duplas_h);
         std::vector<Carta> cartas_jogadas;
         cartas_jogadas = sub_rodada.joga_carta(duplas_h, indice);
-        std::vector<Carta>maior_carta = regras.maior_carta(cartas_jogadas);
+        std::vector<Carta>maior_carta;
+        maior_carta = regras.maior_carta(cartas_jogadas);
 
         for(size_t i = 0; i < maior_carta.size(); ++i){
             std::cout << "A maior carta foi " <<maior_carta[i].toString() << std::endl;
