@@ -25,19 +25,23 @@ std::vector<Carta> Regras::maior_carta(std::vector<Carta>& cartas){
  bool Vencedor::vencedor_sub_rodada(std::vector<Carta>& mao_rodada){
     Regras regras;
     std::vector<Carta> maior_carta = regras.maior_carta(mao_rodada);
-    
+    bool condicao = false;
+
     if(maior_carta.size() == 1){
-        return true;
-    } else return false;
+        condicao = true;
+    }
+    return condicao;
 }
 
 bool Vencedor::empate_sub_rodada(std::vector<Carta>& mao_rodada){
     Regras regras;
     std::vector<Carta> maior_carta = regras.maior_carta(mao_rodada);
-    return true;
+    bool condicao = false;
+
     if(maior_carta.size() > 1){
-        return true;
-    } else return false;
+        condicao = true;
+    }
+    return condicao;
 }
 
 std::pair<Jogador, std::vector<Carta>> Vencedor::verifica_vencedor_SR(std::vector<Carta>& mao_rodada, std::pair<Dupla,Dupla>& duplas){
