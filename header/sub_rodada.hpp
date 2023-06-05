@@ -14,8 +14,8 @@ class Sub_Rodada{
     friend class Vencedor;
     friend class Comeca_Rodada;
     private:
-    unsigned pontuacao_sub_rodada_dupla1 = 0;
-    unsigned pontuacao_sub_rodada_dupla2 = 0;
+    unsigned pontuacao_sub_rodada_dupla1;
+    unsigned pontuacao_sub_rodada_dupla2;
 };
 //Este método estará responsável por avaliar as sub_partidas. Nesse sentido, sub_partidas
 //seriam relacionadas ao lance em que cada jogador joga suas cartas e avaliamos quem ganhou
