@@ -1,5 +1,4 @@
 #include "../header/jogo.hpp" 
-#include "../header/jogador.hpp"
 #include <vector>
 #include <iostream>
 

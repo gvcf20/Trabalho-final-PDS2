@@ -11,6 +11,13 @@ class Rodada{
     void distribui_cartas(std::pair<Dupla, Dupla>& duplas);
     void exibe_cartas(std::pair<Dupla, Dupla> duplas);
     
+    private:
+
+};
+
+class Comeca_Rodada{
+    public:
+    void comeca_rodada(std::pair <Dupla,Dupla>& duplas_h);
 };
 
 

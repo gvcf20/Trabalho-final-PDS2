@@ -8,8 +8,10 @@
 class Sub_Rodada{
     public:
     std::vector<Carta> joga_carta(std::pair<Dupla, Dupla>& duplas, unsigned i);
-    Dupla verifica_vencedor(std::pair<Dupla, Dupla>& duplas, std::vector<Carta> cartas_jogadas, unsigned pt);
+    
     friend class JOGO;
+    friend class Vencedor;
+    friend class Comeca_Rodada;
     private:
     unsigned pontuacao_sub_rodada_dupla1;
     unsigned pontuacao_sub_rodada_dupla2;
