@@ -1,10 +1,9 @@
-#include "JOGO_principal.cpp"
+#include "../header/JOGO_principal.hpp"
 #include <iostream>
 #include <string>
 #include <vector>
 
 int main(){
-    
     
     std::cout << "*Olá seres humanos, vocês desejam jogar truco [Y/N]?" << std::endl;
     char c; 
@@ -18,11 +17,12 @@ int main(){
         exibe_duplas(duplas);
 
 
-        while(duplas.first.jogos_vencidos < 2 && duplas.second.jogos_vencidos < 2){
+        while(duplas.first.jogos_vencidos != 2 && duplas.second.jogos_vencidos != 2){
             std::cout << " A PARTIDA VAI COMEÇAR " << std::endl;
 
             JOGO jogo;
             jogo.comeca_jogo(duplas);
+        
         }
 
         if(duplas.first.jogos_vencidos = 2){

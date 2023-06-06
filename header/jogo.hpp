@@ -1,7 +1,5 @@
 #ifndef JOGO_H
 #define JOGO_H
-#include "../header/jogador.hpp"
-#include "../header/cartas.hpp"
 #include "../header/regras.hpp"
 #include "../header/embaralhamento.hpp"
 #include "../header/rodada.hpp"

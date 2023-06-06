@@ -1,8 +1,7 @@
 #ifndef JOGO_PRINCIPAL_H
 #define JOGO_PRINCIPAL_H
 #include "jogo.hpp"
-#include "jogador.hpp"
-#include "dupla.hpp"
+#include "rodada.hpp"
 #include <iostream>
 #include <vector>
 

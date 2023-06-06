@@ -4,6 +4,7 @@
 #include <vector>
 #include<string>
 #include "cartas.hpp"
+#include "dupla.hpp"
 
 class Sub_Rodada{
     public:
