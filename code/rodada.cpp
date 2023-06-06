@@ -78,18 +78,20 @@ void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h){
         std::vector<Carta> maior_carta;
         maior_carta = regras.maior_carta(cartas_jogadas);
 
-        for(size_t i = 0; i < maior_carta.size(); i++){
-            std::cout << "A suposta maior carta foi: " << maior_carta[i].toString() << std::endl;
-        }
+        // for(size_t i = 0; i < maior_carta.size(); i++){
+        //     std::cout << "A suposta maior carta foi: " << maior_carta[i].toString() << std::endl;
+        // }
+
+    
         
         bool condicao;
-        condicao = vencedor.vencedor_sub_rodada(maior_carta);
+        condicao = vencedor.vencedor_sub_rodada(cartas_jogadas);
         bool condicao1;
-        condicao1 = vencedor.empate_sub_rodada(maior_carta);
+        condicao1 = vencedor.empate_sub_rodada(cartas_jogadas);
 
-        if(condicao == 1){
+        if(condicao == true){
             std::cout << "oi" << std::endl;
-            jogador_vencedor_SR = vencedor.verifica_vencedor_SR(maior_carta, duplas_h);
+            jogador_vencedor_SR = vencedor.verifica_vencedor_SR(cartas_jogadas, duplas_h);
             pontuacao_SR = vencedor.pontos_sub_rodada_vencedor(duplas_h , cartas_jogadas, ptl);
 
             std::cout <<"O jogador: " << jogador_vencedor_SR.first.nome_jogador <<
@@ -97,7 +99,7 @@ void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h){
         }
 
         else if(condicao1){
-            Dupla_empate_SR = vencedor.verifica_empate_SR(maior_carta, duplas_h);
+            Dupla_empate_SR = vencedor.verifica_empate_SR(cartas_jogadas, duplas_h);
             pontuacao_SR = vencedor.pontos_sub_rodada_vencedor(duplas_h , cartas_jogadas, ptl);
 
             if(Dupla_empate_SR.first.duplinha.first.nome_jogador == duplas_h.first.duplinha.first.nome_jogador

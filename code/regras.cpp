@@ -24,10 +24,12 @@ std::vector<Carta> Regras::maior_carta(std::vector<Carta>& cartas){
 
  bool Vencedor::vencedor_sub_rodada(std::vector<Carta>& mao_rodada){
     Regras regras;
-    std::vector<Carta> maior_carta = regras.maior_carta(mao_rodada);
+    std::vector<Carta> maior_carta;
+    maior_carta = regras.maior_carta(mao_rodada);
     bool condicao = false;
+    size_t a = 1;
 
-    if(maior_carta.size() == 1){
+    if(maior_carta.size() == a){
         condicao = true;
     }
     return condicao;
@@ -35,10 +37,12 @@ std::vector<Carta> Regras::maior_carta(std::vector<Carta>& cartas){
 
 bool Vencedor::empate_sub_rodada(std::vector<Carta>& mao_rodada){
     Regras regras;
-    std::vector<Carta> maior_carta = regras.maior_carta(mao_rodada);
+    std::vector<Carta> maior_carta;
+    maior_carta = regras.maior_carta(mao_rodada);
     bool condicao = false;
+    size_t a = 1;
 
-    if(maior_carta.size() > 1){
+    if(maior_carta.size() > a){
         condicao = true;
     }
     return condicao;
