@@ -33,22 +33,27 @@ void Rodada::exibe_cartas(std::pair<Dupla, Dupla> duplas, unsigned j){
     std::vector<Carta> mao_jogador1;
     Jogador jogador;
     if(duplas.first.duplinha.first.mao.size() > 0){
+        std::cout << "-------------------------------------------------------------------" << std::endl;
         std::cout << "Dupla 1 " << duplas.first.duplinha.first.nome_jogador << std::endl;
         for(int i = 0; i < j; ++i){
             std::cout << duplas.first.duplinha.first.mao[i].toString() << std::endl;
         }
+        std::cout << "-------------------------------------------------------------------" << std::endl;
         std::cout << "Dupla 1 " << duplas.first.duplinha.second.nome_jogador << std::endl;
         for(int i = 0; i < j; ++i){
             std::cout << duplas.first.duplinha.second.mao[i].toString() << std::endl;
         }
+        std::cout << "-------------------------------------------------------------------" << std::endl;
         std::cout << "Dupla 2 " << duplas.second.duplinha.first.nome_jogador << std::endl;
         for(int i = 0; i < j; ++i){
             std::cout << duplas.second.duplinha.first.mao[i].toString() << std::endl;
         }
+        std::cout << "-------------------------------------------------------------------" << std::endl;
         std::cout << "Dupla 2 " << duplas.second.duplinha.second.nome_jogador << std::endl;
         for(int i = 0; i < j; ++i){
             std::cout << duplas.second.duplinha.second.mao[i].toString() << std::endl;
         }
+        std::cout << "-------------------------------------------------------------------" << std::endl;
     }
 }
 
@@ -77,12 +82,6 @@ void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h){
         cartas_jogadas = sub_rodada.joga_carta(duplas_h, indice);
         std::vector<Carta> maior_carta;
         maior_carta = regras.maior_carta(cartas_jogadas);
-
-        // for(size_t i = 0; i < maior_carta.size(); i++){
-        //     std::cout << "A suposta maior carta foi: " << maior_carta[i].toString() << std::endl;
-        // }
-
-    
         
         bool condicao;
         condicao = vencedor.vencedor_sub_rodada(cartas_jogadas);
@@ -90,12 +89,14 @@ void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h){
         condicao1 = vencedor.empate_sub_rodada(cartas_jogadas);
 
         if(condicao == true){
-            std::cout << "oi" << std::endl;
+           
             jogador_vencedor_SR = vencedor.verifica_vencedor_SR(cartas_jogadas, duplas_h);
             pontuacao_SR = vencedor.pontos_sub_rodada_vencedor(duplas_h , cartas_jogadas, ptl);
 
+            std::cout << "-------------------------------------------------------------------" << std::endl;
             std::cout <<"O jogador: " << jogador_vencedor_SR.first.nome_jogador <<
             " ganhou a partida com a carta: " << jogador_vencedor_SR.second[0].toString() << std::endl;
+            std::cout << "-------------------------------------------------------------------" << std::endl;
         }
 
         else if(condicao1){
@@ -107,17 +108,21 @@ void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h){
             || Dupla_empate_SR.first.duplinha.first.nome_jogador == duplas_h.second.duplinha.first.nome_jogador
             && Dupla_empate_SR.first.duplinha.second.nome_jogador == duplas_h.second.duplinha.second.nome_jogador){
                 
+                std::cout << "-------------------------------------------------------------------" << std::endl;
                 std::cout << "Não houve um empate entre os jogadores: " << Dupla_empate_SR.first.duplinha.first.nome_jogador 
                 << " e " << Dupla_empate_SR.first.duplinha.second.nome_jogador << ", devido a terem jogado as cartas: "
                 << Dupla_empate_SR.second[0].toString() << " e " << Dupla_empate_SR.second[1].toString()
                 << " pois pertecem a mesma dupla. " << std::endl;
+                std::cout << "-------------------------------------------------------------------" << std::endl;
             }
             else{
-            
+                
+                std::cout << "-------------------------------------------------------------------" << std::endl;
                 std::cout << "Houve um empate entre os jogadores: " << Dupla_empate_SR.first.duplinha.first.nome_jogador 
                 << " e " << Dupla_empate_SR.first.duplinha.second.nome_jogador << ", devido a terem jogado as cartas: "
                 << Dupla_empate_SR.second[0].toString() << " e " << Dupla_empate_SR.second[1].toString()
                 << " que detém o mesmo peso. " << std::endl;
+                std::cout << "-------------------------------------------------------------------" << std::endl;
             }
 
         }
@@ -135,8 +140,18 @@ void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h){
     }
      if(sub_rodada.pontuacao_sub_rodada_dupla1 >= 5){
          duplas_h.first.pontuacao += 2;
+         std::cout << "-------------------------------------------------------------------" << std::endl;
+         std::cout << "A dupla 1 ganhou a primeira rodada e recebe 2 pontos" << std::endl;
+         std::cout << "Pontuação atual: " << duplas_h.first.pontuacao << std::endl;
+         std::cout << "Pontuação atual: " << duplas_h.second.pontuacao << std::endl;
+         std::cout << "-------------------------------------------------------------------" << std::endl;
      } else if (sub_rodada.pontuacao_sub_rodada_dupla2 >= 5){
          duplas_h.second.pontuacao += 2;
+         std::cout << "-------------------------------------------------------------------" << std::endl;
+         std::cout << "A dupla 2 ganhou a primeira rodada e recebe 2 pontos" << std::endl;
+         std::cout << "Pontuação atual: " << duplas_h.first.pontuacao << std::endl;
+         std::cout << "Pontuação atual: " << duplas_h.second.pontuacao << std::endl;
+         std::cout << "-------------------------------------------------------------------" << std::endl;
     }
 }
 

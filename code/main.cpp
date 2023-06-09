@@ -9,17 +9,22 @@ int main(){
     char c; 
     std::cin >> c;
     std::cout << std::endl;
-    if(c == 'Y'){
+    if(c == 'Y' || c == 'y' || c == 's' || c == 'S'){
         
+        Regras regras;
+        char t;
+        std::cout << "Seres humanos, os senhores gostariam de saber as regras do nosso truco? Fizemos algumas adaptações do truco convencional... :" << std::endl;
+        std::cin >> t;
+        regras.exibe_regra(t);
         std::vector<Jogador> jogadores = cadastro_jogadores();
         exibe_jogadores(jogadores);
         std::pair<Dupla, Dupla> duplas = set_duplas(jogadores);
         exibe_duplas(duplas);
-
-
-        while(duplas.first.jogos_vencidos != 2 && duplas.second.jogos_vencidos != 2){
-            std::cout << " A PARTIDA VAI COMEÇAR " << std::endl;
-
+        duplas.first.jogos_vencidos = 0;
+        duplas.second.jogos_vencidos = 0;
+        while(duplas.first.jogos_vencidos < 2 && duplas.second.jogos_vencidos < 2){
+            Regras regras;
+    
             JOGO jogo;
             jogo.comeca_jogo(duplas);
         
