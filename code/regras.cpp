@@ -49,7 +49,7 @@ std::pair<Jogador, std::vector<Carta>> Vencedor::verifica_vencedor_SR(std::vecto
     Regras regras;
     std::pair<Jogador, std::vector<Carta>> dupla_winner;
     std::vector<Carta> mao_ganhadora = regras.maior_carta(mao_rodada);
-    size_t j;
+    size_t j = 0;
 
     for(size_t i = 0; i < mao_rodada.size(); ++i){
         if(mao_ganhadora[0] == mao_rodada[i]){
@@ -207,7 +207,7 @@ std::pair<unsigned, unsigned> Vencedor::pontos_sub_rodada_vencedor(std::pair<Dup
     pontuacao_sub_rodada.first = 0;
     pontuacao_sub_rodada.second = 0;
     if(vencedor.empate_sub_rodada(cartas_jogadas)){
-
+        
         std::vector<Carta> empate_carta = regras.maior_carta(cartas_jogadas);
         size_t i = empate_carta.size();
 
