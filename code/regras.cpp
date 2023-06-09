@@ -22,6 +22,35 @@ std::vector<Carta> Regras::maior_carta(std::vector<Carta>& cartas){
     
 }
 
+void Regras::exibe_regra(char c){
+    if(c == 'Y' || c == 'y' || c == 's' || c == 'S'){
+
+        std::cout << "-------------------------------------------------------------------" << std::endl;
+        std::cout << "MANILHAS: A ordem das cartas mais fortes está disposta como segue: " << std::endl
+        << "Folhas-QUATRO; Copas-SETE; As-ESPADA; OURO-SETE; TRÊS; DOIS; AS; REI; VALETE" << std::endl
+        <<"; RAINHA; SETE; CINCO; QUATRO; Os que não tiveram naipe especificados, são"    << std::endl
+        <<" de qualquer naipe exceto pelos 4 primeiros supracitados." << std::endl;
+        std::cout << "-------------------------------------------------------------------" << std::endl;
+        std::cout << "PONTUAÇÃO: Para se ganhar um jogo, deve-se ganhar 2 partidas, e " << std::endl
+        <<"para se ganhar uma partida, deve-se ganhar 12 pontos, que são ganhos de dois " <<std::endl
+        <<"em dois a cada rodada vencida. Por fim, para se ganhar uma rodada, deve-se de " << std::endl
+        <<"ganhar 5 pontos numa sub_rodada. " <<std::endl;
+        std::cout << "-------------------------------------------------------------------" << std::endl;
+        std::cout << "Pontuação Sub rodada: Uma sub_rodada tem no máximo, 3 lances, de " <<std::endl
+        <<"modo que se os 5 pontos não forem atingindos, a sub_rodada não distribui pon_" <<std::endl
+        <<"tos para nenhuma das duplas. Dito isso, o primeiro lance da sub_rodada vale" <<std::endl
+        <<" 3 pontos, a segunda 2, a terceira 3 e 2 pontos em caso de empate. É deixa_ " <<std::endl
+        <<"xado a cargo dos jogadores como exercício, pensarem nas possibilidades relativas" <<std::endl
+        <<"do sistema de pontuação e pesquisarem sobre as outras regras do truco. (Dica: " << std::endl
+        << "abra o seu navegador e use o google e tente pesquisar digitando com o teclado.) " << std::endl; 
+        std::cout << "-------------------------------------------------------------------" << std::endl;
+
+        std::cout << "A partida vai começar ! " << std::endl;
+    } else {
+        std::cout << "A partida vai começar ! " << std::endl;
+    }
+}
+
  bool Vencedor::vencedor_sub_rodada(std::vector<Carta>& mao_rodada){
     Regras regras;
     std::vector<Carta> maior_carta;
@@ -53,7 +82,7 @@ std::pair<Jogador, std::vector<Carta>> Vencedor::verifica_vencedor_SR(std::vecto
     Regras regras;
     std::pair<Jogador, std::vector<Carta>> dupla_winner;
     std::vector<Carta> mao_ganhadora = regras.maior_carta(mao_rodada);
-    size_t j;
+    size_t j = 0;
 
     for(size_t i = 0; i < mao_rodada.size(); ++i){
         if(mao_ganhadora[0] == mao_rodada[i]){
@@ -215,7 +244,7 @@ std::pair<unsigned, unsigned> Vencedor::pontos_sub_rodada_empate(std::pair<Dupla
     pontuacao_sub_rodada.first = 0;
     pontuacao_sub_rodada.second = 0;
     if(vencedor.empate_sub_rodada(cartas_jogadas)){
-
+        
         std::vector<Carta> empate_carta = regras.maior_carta(cartas_jogadas);
         size_t i = empate_carta.size();
 

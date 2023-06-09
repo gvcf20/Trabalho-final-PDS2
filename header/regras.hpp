@@ -6,6 +6,7 @@
 class Regras {
     public:
     std::vector<Carta> maior_carta(std::vector<Carta>& cartas);
+    void exibe_regra(char c);
 };
 
 class Vencedor{
@@ -18,6 +19,10 @@ class Vencedor{
     std::pair<Jogador, std::vector<Carta>> verifica_vencedor_SR(std::vector<Carta>& mao_rodada, std::pair<Dupla,Dupla>& duplas);
     std::pair<Dupla, std::vector<Carta>> verifica_empate_SR(std::vector<Carta>& mao_rodada, std::pair<Dupla,Dupla>& duplas);
 
+};
+
+class Pede_Truco{
+    
 };
 
 #endif

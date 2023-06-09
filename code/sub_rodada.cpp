@@ -40,14 +40,20 @@ std::vector<Carta> Sub_Rodada::joga_carta(std::pair<Dupla, Dupla>& duplas, unsig
         mao_rodada.push_back(duplas.second.duplinha.second.mao[i4]);
         duplas.second.duplinha.second.mao.erase(duplas.second.duplinha.second.mao.begin() + i4);
 
+        std::cout << "-------------------------------------------------------------------" << std::endl;
         std::cout << "Cartas das mãos dos jogares: " << std::endl;
         std::cout << std::endl;
         rodada.exibe_cartas(duplas, i);
+        std::cout << "-------------------------------------------------------------------" << std::endl;
         std::cout << "Cartas jogadas: " << std::endl;
         std::cout << duplas.first.duplinha.first.nome_jogador << ": " << mao_rodada[0].toString() << std::endl;
+        std::cout << "-------------------------------------------------------------------" << std::endl;
         std::cout << duplas.first.duplinha.second.nome_jogador << ": "<< mao_rodada[1].toString() << std::endl;
+        std::cout << "-------------------------------------------------------------------" << std::endl;
         std::cout << duplas.second.duplinha.first.nome_jogador << ": " << mao_rodada[2].toString() << std::endl;
+        std::cout << "-------------------------------------------------------------------" << std::endl;
         std::cout << duplas.second.duplinha.second.nome_jogador << ": "<< mao_rodada[3].toString() << std::endl;
+        std::cout << "-------------------------------------------------------------------" << std::endl;
         std::cout << std::endl;
             //Vencedor vencedor;
 
