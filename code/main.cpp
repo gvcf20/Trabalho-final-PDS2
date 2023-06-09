@@ -5,7 +5,6 @@
 
 int main(){
     
-    
     std::cout << "*Olá seres humanos, vocês desejam jogar truco [Y/N]?" << std::endl;
     char c; 
     std::cin >> c;

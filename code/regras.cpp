@@ -24,10 +24,12 @@ std::vector<Carta> Regras::maior_carta(std::vector<Carta>& cartas){
 
  bool Vencedor::vencedor_sub_rodada(std::vector<Carta>& mao_rodada){
     Regras regras;
-    std::vector<Carta> maior_carta = regras.maior_carta(mao_rodada);
+    std::vector<Carta> maior_carta;
+    maior_carta = regras.maior_carta(mao_rodada);
     bool condicao = false;
+    size_t a = 1;
 
-    if(maior_carta.size() == 1){
+    if(maior_carta.size() == a){
         condicao = true;
     }
     return condicao;
@@ -35,10 +37,12 @@ std::vector<Carta> Regras::maior_carta(std::vector<Carta>& cartas){
 
 bool Vencedor::empate_sub_rodada(std::vector<Carta>& mao_rodada){
     Regras regras;
-    std::vector<Carta> maior_carta = regras.maior_carta(mao_rodada);
+    std::vector<Carta> maior_carta;
+    maior_carta = regras.maior_carta(mao_rodada);
     bool condicao = false;
+    size_t a = 1;
 
-    if(maior_carta.size() > 1){
+    if(maior_carta.size() > a){
         condicao = true;
     }
     return condicao;
@@ -196,8 +200,12 @@ std::pair<unsigned, unsigned> Vencedor::pontos_sub_rodada_vencedor(std::pair<Dup
         }
         return pontuacao_sub_rodada;
     }
+
+    return pontuacao_sub_rodada;
 }
-    std::pair<unsigned, unsigned> Vencedor::pontos_sub_rodada_empate(std::pair<Dupla, Dupla>& duplas, std::vector<Carta>& cartas_jogadas, unsigned pt){   
+
+
+std::pair<unsigned, unsigned> Vencedor::pontos_sub_rodada_empate(std::pair<Dupla, Dupla>& duplas, std::vector<Carta>& cartas_jogadas, unsigned pt){   
     
     Vencedor vencedor;
     Regras regras;
@@ -247,9 +255,14 @@ std::pair<unsigned, unsigned> Vencedor::pontos_sub_rodada_vencedor(std::pair<Dup
                 } else{
                     std::cout <<"Número de sub_rodadas inválidas!!!! " << std::endl;
                     return pontuacao_sub_rodada;
-        
+                }
+                return pontuacao_sub_rodada;
             }
-            return pontuacao_sub_rodada;
-        }
+        return pontuacao_sub_rodada;
+
+       
     }
-}
+
+    return pontuacao_sub_rodada;    
+
+}          
