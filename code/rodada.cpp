@@ -92,6 +92,7 @@ void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h){
            
             jogador_vencedor_SR = vencedor.verifica_vencedor_SR(cartas_jogadas, duplas_h);
             pontuacao_SR = vencedor.pontos_sub_rodada_vencedor(duplas_h , cartas_jogadas, ptl);
+            std::cout << " " << std::endl;
 
             std::cout << "-------------------------------------------------------------------" << std::endl;
             std::cout <<"O jogador: " << jogador_vencedor_SR.first.nome_jogador <<
@@ -146,6 +147,7 @@ void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h){
          std::cout << "Pontuação atual: " << duplas_h.second.pontuacao << std::endl;
          std::cout << "-------------------------------------------------------------------" << std::endl;
      } else if (sub_rodada.pontuacao_sub_rodada_dupla2 >= 5){
+        std::cout << " ----------------------------" << std::endl;
          duplas_h.second.pontuacao += 2;
          std::cout << "-------------------------------------------------------------------" << std::endl;
          std::cout << "A dupla 2 ganhou a primeira rodada e recebe 2 pontos" << std::endl;
@@ -153,5 +155,7 @@ void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h){
          std::cout << "Pontuação atual: " << duplas_h.second.pontuacao << std::endl;
          std::cout << "-------------------------------------------------------------------" << std::endl;
     }
+
+
 }
 

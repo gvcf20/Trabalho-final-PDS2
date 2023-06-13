@@ -6,6 +6,7 @@
 int main(){
     
     std::cout << "*Olá seres humanos, vocês desejam jogar truco [Y/N]?" << std::endl;
+    std::cout << " -------------------------------------" << std::endl;
     char c; 
     std::cin >> c;
     std::cout << std::endl;
@@ -18,6 +19,7 @@ int main(){
         regras.exibe_regra(t);
         std::vector<Jogador> jogadores = cadastro_jogadores();
         exibe_jogadores(jogadores);
+        std::cout << " " << std::endl;
         std::pair<Dupla, Dupla> duplas = set_duplas(jogadores);
         exibe_duplas(duplas);
         duplas.first.jogos_vencidos = 0;
