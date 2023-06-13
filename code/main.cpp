@@ -46,3 +46,7 @@ int main(){
 
     return 0;
 }
+// Para rodar o código:
+//g++ -std=c++17 code/embaralhamento.cpp code/jogador.cpp code/JOGO_principal.cpp
+//code/jogo.cpp code/regras.cpp code/rodada.cpp code/sub_rodada.cpp code/main.cpp
+//-o truco
