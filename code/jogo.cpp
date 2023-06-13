@@ -13,9 +13,11 @@ std::vector<Jogador> cadastro_jogadores(){
     return Jogadores;
 }
 void exibe_jogadores(const std::vector<Jogador> jogs){
+    std::cout << "-------------------------------------------------------------------" << std::endl;
     for(std::size_t i = 0; i < jogs.size(); i++){
         std::cout << jogs[i].nome_jogador << std::endl;
     }
+    std::cout << "-------------------------------------------------------------------" << std::endl;
 }
 
 std::pair<Dupla, Dupla> set_duplas(std::vector<Jogador> jogadoress){
@@ -35,12 +37,13 @@ void exibe_duplas(const std::pair<Dupla, Dupla> duplas) {
     std::cout << "Duplas formadas:" << std::endl;
 
     // Exibe informações da primeira dupla
+    std::cout << "-------------------------------------------------------------------" << std::endl;
     std::cout << "Dupla 1:" << std::endl;
     std::cout << "Jogador 1: " << duplas.first.duplinha.first.nome_jogador << std::endl;
     std::cout << "Jogador 2: " << duplas.first.duplinha.second.nome_jogador << std::endl;
-    
+    std::cout << "-------------------------------------------------------------------" << std::endl;
     std::cout << "VS" << std::endl;
-    // Exibe informações da segunda dupla
+    std::cout << "-------------------------------------------------------------------" << std::endl;
     std::cout << "Dupla 2:" << std::endl;
     std::cout << "Jogador 1: " << duplas.second.duplinha.first.nome_jogador << std::endl;
     std::cout << "Jogador 2: " << duplas.second.duplinha.second.nome_jogador << std::endl;
