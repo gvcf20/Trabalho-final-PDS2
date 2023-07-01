@@ -294,4 +294,64 @@ std::pair<unsigned, unsigned> Vencedor::pontos_sub_rodada_empate(std::pair<Dupla
 
     return pontuacao_sub_rodada;    
 
-}          
+} 
+
+bool Pede_Truco::pede_truco(std::pair<Dupla, Dupla>& duplas, unsigned i){
+    
+    char pede;
+    bool condicao = false;
+    if(i == 1){
+        std::cout << "O jogador " << duplas.first.duplinha.first.nome_jogador
+        << " Deseja pedir truco? " << std::endl;
+    } else if(i == 2){
+        std::cout << "O jogador " << duplas.first.duplinha.second.nome_jogador
+        << " Deseja pedir truco? " << std::endl;
+    } else if(i == 3){
+        std::cout << "O jogador " << duplas.second.duplinha.first.nome_jogador
+        << " Deseja pedir truco? " << std::endl;
+    } else if(i == 4){
+        std::cout << "O jogador " << duplas.second.duplinha.second.nome_jogador
+        << " Deseja pedir truco? " << std::endl;
+    }
+    std::cout << std::endl;
+    while(pede != 'N' && pede != 'Y'){
+        std::cout << "Y/N? " << std::endl;
+        std::cin >> pede;
+    } 
+    std::cout << std::endl;
+    if(pede == 'Y'){
+        condicao = true;
+    }
+
+    return condicao;
+
+}
+bool Pede_Truco::aceita_truco(std::pair<Dupla, Dupla>& duplas, unsigned i){
+    char aceita;
+    bool condicao = false;
+    if(i == 1){
+        std::cout << "O jogador " << duplas.first.duplinha.first.nome_jogador
+        << " Deseja aceitar o pedido de truco? Y/N" << std::endl;
+    } else if(i == 2){
+        std::cout << "O jogador " << duplas.first.duplinha.second.nome_jogador
+        << " Deseja aceitar o pedido de truco? Y/N" << std::endl;
+    } else if(i == 3){
+        std::cout << "O jogador " << duplas.second.duplinha.first.nome_jogador
+        << " Deseja aceitar o pedido de truco? Y/N" << std::endl;
+    } else if(i == 4){
+        std::cout << "O jogador " << duplas.second.duplinha.second.nome_jogador
+        << " Deseja aceitar o pedido de truco? Y/N" << std::endl;
+    }
+    std::cin >> aceita; 
+    std::cout << std::endl;
+    if(aceita == 'Y'){
+        condicao = true;
+    }
+    return condicao;
+} 
+
+unsigned Pede_Truco::pt_truco(bool condicao){
+    if (condicao == false){
+
+    }
+}

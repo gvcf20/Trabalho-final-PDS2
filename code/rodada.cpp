@@ -70,6 +70,10 @@ void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h){
     std::pair<unsigned int, unsigned int> pontuacao_SR;
     pontuacao_SR.first = 0;
     pontuacao_SR.second = 0;
+    Pede_Truco truquinho;
+    truquinho.condition = false;
+    truquinho.condition_aceitas = false;
+
     rodada.distribui_cartas(duplas_h);
     Sub_Rodada sub_rodada;
     sub_rodada.pontuacao_sub_rodada_dupla1 = 0;
@@ -135,23 +139,25 @@ void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h){
         ptl = ptl + 1;
         j = j - 1;
 
-
-
     }
      if(sub_rodada.pontuacao_sub_rodada_dupla1 >= 5){
-         duplas_h.first.pontuacao += 2;
-         std::cout << "-------------------------------------------------------------------" << std::endl;
-         std::cout << "A dupla 1 ganhou a primeira rodada e recebe 2 pontos" << std::endl;
-         std::cout << "Pontuação atual: " << duplas_h.first.pontuacao << std::endl;
-         std::cout << "Pontuação atual: " << duplas_h.second.pontuacao << std::endl;
-         std::cout << "-------------------------------------------------------------------" << std::endl;
+        truquinho.condition = false;
+        truquinho.condition_aceitas = false;
+        duplas_h.first.pontuacao += 2;
+        std::cout << "-------------------------------------------------------------------" << std::endl;
+        std::cout << "A dupla 1 ganhou a primeira rodada e recebe 2 pontos" << std::endl;
+        std::cout << "Pontuação atual: " << duplas_h.first.pontuacao << std::endl;
+        std::cout << "Pontuação atual: " << duplas_h.second.pontuacao << std::endl;
+        std::cout << "-------------------------------------------------------------------" << std::endl;
      } else if (sub_rodada.pontuacao_sub_rodada_dupla2 >= 5){
-         duplas_h.second.pontuacao += 2;
-         std::cout << "-------------------------------------------------------------------" << std::endl;
-         std::cout << "A dupla 2 ganhou a primeira rodada e recebe 2 pontos" << std::endl;
-         std::cout << "Pontuação atual: " << duplas_h.first.pontuacao << std::endl;
-         std::cout << "Pontuação atual: " << duplas_h.second.pontuacao << std::endl;
-         std::cout << "-------------------------------------------------------------------" << std::endl;
+        truquinho.condition = false;
+        truquinho.condition_aceitas = false;
+        duplas_h.second.pontuacao += 2;
+        std::cout << "-------------------------------------------------------------------" << std::endl;
+        std::cout << "A dupla 2 ganhou a primeira rodada e recebe 2 pontos" << std::endl;
+        std::cout << "Pontuação atual: " << duplas_h.first.pontuacao << std::endl;
+        std::cout << "Pontuação atual: " << duplas_h.second.pontuacao << std::endl;
+        std::cout << "-------------------------------------------------------------------" << std::endl;
     }
 }
 
