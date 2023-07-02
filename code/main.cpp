@@ -6,6 +6,7 @@
 int main(){
     
     std::cout << "*Olá seres humanos, vocês desejam jogar truco [Y/N]?" << std::endl;
+    std::cout << " -------------------------------------" << std::endl;
     char c; 
     std::cin >> c;
     std::cout << std::endl;
@@ -13,11 +14,12 @@ int main(){
         
         Regras regras;
         char t;
-        std::cout << "Seres humanos, os senhores gostariam de saber as regras do nosso truco? Fizemos algumas adaptações do truco convencional... :" << std::endl;
+        std::cout << "Seres humanos, os senhores gostariam de saber as regras do nosso truco? Fizemos algumas adaptações do truco convencional... : [Y/N]" << std::endl;
         std::cin >> t;
         regras.exibe_regra(t);
         std::vector<Jogador> jogadores = cadastro_jogadores();
         exibe_jogadores(jogadores);
+        std::cout << " " << std::endl;
         std::pair<Dupla, Dupla> duplas = set_duplas(jogadores);
         exibe_duplas(duplas);
         duplas.first.jogos_vencidos = 0;
