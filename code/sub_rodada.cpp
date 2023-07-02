@@ -24,6 +24,7 @@ std::vector<Carta> Sub_Rodada::joga_carta(std::pair<Dupla, Dupla>& duplas, unsig
         jogador_aceita_truco_SR = truquinho.aceita_truco(duplas,1);
         truquinho.condition_aceitas= jogador_aceita_truco_SR.first;
     }
+    
     while(i1 < 0 || i1 > i){
         std::cout << duplas.first.duplinha.first.nome_jogador <<" suas cartas estão numeradas de 0 a " << i <<" Escolha uma, entre 0 e " << i << " para lançar: " << std::endl;
         std:: cin >> i1; std::cout << std::endl;
@@ -33,24 +34,6 @@ std::vector<Carta> Sub_Rodada::joga_carta(std::pair<Dupla, Dupla>& duplas, unsig
     
 
    if(truquinho.condition == false){
-        jogador_truco_SR = truquinho.pede_truco(duplas, 2);
-        truquinho.condition = jogador_truco_SR.first;
-    }
-    if(truquinho.condition == true && truquinho.condition_aceitas == false && 
-    jogador_truco_SR.second != duplas.first.duplinha.first.nome_jogador &&
-    jogador_truco_SR.second != duplas.first.duplinha.second.nome_jogador){
-        jogador_aceita_truco_SR = truquinho.aceita_truco(duplas,2);
-        truquinho.condition_aceitas= jogador_aceita_truco_SR.first;
-    }
-
-    while(i2 < 0 || i2 > i){
-        std::cout << duplas.first.duplinha.second.nome_jogador <<" suas cartas estão numeradas de 0 a " << i <<" Escolha uma, entre 0 e " << i << " para lançar: " << std::endl;
-        std:: cin >> i2; std::cout << std::endl;
-    }
-    mao_rodada.push_back(duplas.first.duplinha.second.mao[i2]);
-    duplas.first.duplinha.second.mao.erase(duplas.first.duplinha.second.mao.begin() + i2);    
-
-    if(truquinho.condition == false){
         jogador_truco_SR = truquinho.pede_truco(duplas, 3);
         truquinho.condition = jogador_truco_SR.first;
     }
@@ -66,8 +49,25 @@ std::vector<Carta> Sub_Rodada::joga_carta(std::pair<Dupla, Dupla>& duplas, unsig
         std:: cin >> i3; std::cout << std::endl;
     }
     mao_rodada.push_back(duplas.second.duplinha.first.mao[i3]);
-    duplas.second.duplinha.first.mao.erase(duplas.second.duplinha.first.mao.begin() + i3);
+    duplas.second.duplinha.first.mao.erase(duplas.second.duplinha.first.mao.begin() + i3);  
 
+    if(truquinho.condition == false){
+        jogador_truco_SR = truquinho.pede_truco(duplas, 2);
+        truquinho.condition = jogador_truco_SR.first;
+    }
+    if(truquinho.condition == true && truquinho.condition_aceitas == false && 
+    jogador_truco_SR.second != duplas.first.duplinha.first.nome_jogador &&
+    jogador_truco_SR.second != duplas.first.duplinha.second.nome_jogador){
+        jogador_aceita_truco_SR = truquinho.aceita_truco(duplas,2);
+        truquinho.condition_aceitas= jogador_aceita_truco_SR.first;
+    }
+
+    while(i2 < 0 || i2 > i){
+        std::cout << duplas.first.duplinha.second.nome_jogador <<" suas cartas estão numeradas de 0 a " << i <<" Escolha uma, entre 0 e " << i << " para lançar: " << std::endl;
+        std:: cin >> i2; std::cout << std::endl;
+    }
+    mao_rodada.push_back(duplas.first.duplinha.second.mao[i2]);
+    duplas.first.duplinha.second.mao.erase(duplas.first.duplinha.second.mao.begin() + i2); 
 
     if(truquinho.condition == false){
         jogador_truco_SR = truquinho.pede_truco(duplas, 4);
@@ -95,9 +95,9 @@ std::vector<Carta> Sub_Rodada::joga_carta(std::pair<Dupla, Dupla>& duplas, unsig
     std::cout << "Cartas jogadas: " << std::endl;
     std::cout << duplas.first.duplinha.first.nome_jogador << ": " << mao_rodada[0].toString() << std::endl;
     std::cout << "-------------------------------------------------------------------" << std::endl;
-    std::cout << duplas.first.duplinha.second.nome_jogador << ": "<< mao_rodada[1].toString() << std::endl;
+    std::cout << duplas.second.duplinha.first.nome_jogador << ": "<< mao_rodada[2].toString() << std::endl;
     std::cout << "-------------------------------------------------------------------" << std::endl;
-    std::cout << duplas.second.duplinha.first.nome_jogador << ": " << mao_rodada[2].toString() << std::endl;
+    std::cout << duplas.first.duplinha.second.nome_jogador << ": " << mao_rodada[1].toString() << std::endl;
     std::cout << "-------------------------------------------------------------------" << std::endl;
     std::cout << duplas.second.duplinha.second.nome_jogador << ": "<< mao_rodada[3].toString() << std::endl;
     std::cout << "-------------------------------------------------------------------" << std::endl;

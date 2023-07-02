@@ -92,11 +92,11 @@ std::pair<Jogador, std::vector<Carta>> Vencedor::verifica_vencedor_SR(std::vecto
         if(j == 0){
             dupla_winner.first = duplas.first.duplinha.first;
             dupla_winner.second = mao_ganhadora;
-        } else if(j == 1){
-            dupla_winner.first = duplas.first.duplinha.second;
-            dupla_winner.second = mao_ganhadora;
         } else if(j == 2){
             dupla_winner.first = duplas.second.duplinha.first;
+            dupla_winner.second = mao_ganhadora;
+        } else if(j == 1){
+            dupla_winner.first = duplas.first.duplinha.second;
             dupla_winner.second = mao_ganhadora;
         } else if(j == 3){
             dupla_winner.first = duplas.second.duplinha.first;
@@ -112,7 +112,7 @@ std::pair<Dupla, std::vector<Carta>> Vencedor::verifica_empate_SR(std::vector<Ca
     std::pair<Dupla, std::vector<Carta>> dupla_empate;
     std::vector<Carta> mao_empate = regras.maior_carta(mao_rodada);
 
-    if(mao_empate[0].peso == mao_rodada[0].peso && mao_empate[0].peso == mao_rodada[2].peso){
+    if(mao_empate[0].peso == mao_rodada[0].peso && mao_empate[0].peso == mao_rodada[1].peso){
             
         dupla_empate.first.duplinha.first = duplas.first.duplinha.first;
         dupla_empate.first.duplinha.second = duplas.second.duplinha.first;
@@ -127,33 +127,33 @@ std::pair<Dupla, std::vector<Carta>> Vencedor::verifica_empate_SR(std::vector<Ca
         dupla_empate.second.push_back(mao_rodada[3]);
     }
 
-    else if(mao_empate[0].peso == mao_rodada[1].peso && mao_empate[0].peso == mao_rodada[2].peso){
+    else if(mao_empate[0].peso == mao_rodada[2].peso && mao_empate[0].peso == mao_rodada[1].peso){
 
         dupla_empate.first.duplinha.first = duplas.first.duplinha.second;
         dupla_empate.first.duplinha.second = duplas.second.duplinha.first;
-        dupla_empate.second.push_back(mao_rodada[1]);
         dupla_empate.second.push_back(mao_rodada[2]);
+        dupla_empate.second.push_back(mao_rodada[1]);
     }
-    else if(mao_empate[0].peso == mao_rodada[1].peso && mao_empate[0].peso == mao_rodada[3].peso){
+    else if(mao_empate[0].peso == mao_rodada[2].peso && mao_empate[0].peso == mao_rodada[3].peso){
         
         dupla_empate.first.duplinha.first = duplas.first.duplinha.second;
         dupla_empate.first.duplinha.second = duplas.second.duplinha.second;
-        dupla_empate.second.push_back(mao_rodada[1]);
+        dupla_empate.second.push_back(mao_rodada[2]);
         dupla_empate.second.push_back(mao_rodada[3]);
     }
-    else if(mao_empate[0].peso == mao_rodada[0].peso && mao_empate[0].peso == mao_rodada[1].peso){
+    else if(mao_empate[0].peso == mao_rodada[0].peso && mao_empate[0].peso == mao_rodada[2].peso){
 
         dupla_empate.first.duplinha.first = duplas.first.duplinha.first;
         dupla_empate.first.duplinha.second = duplas.first.duplinha.second;
-        dupla_empate.second.push_back(mao_empate[0]);
-        dupla_empate.second.push_back(mao_empate[1]);
+        dupla_empate.second.push_back(mao_rodada[0]);
+        dupla_empate.second.push_back(mao_rodada[2]);
     }
-    else if(mao_empate[0].peso == mao_rodada[2].peso && mao_empate[0].peso == mao_rodada[3].peso){
+    else if(mao_empate[0].peso == mao_rodada[1].peso && mao_empate[0].peso == mao_rodada[3].peso){
 
         dupla_empate.first.duplinha.first = duplas.second.duplinha.first;
         dupla_empate.first.duplinha.second = duplas.second.duplinha.second;
-        dupla_empate.second.push_back(mao_empate[0]);
-        dupla_empate.second.push_back(mao_empate[1]);
+        dupla_empate.second.push_back(mao_rodada[1]);
+        dupla_empate.second.push_back(mao_rodada[3]);
     }
 
     return dupla_empate;   
@@ -186,7 +186,7 @@ std::pair<unsigned, unsigned> Vencedor::pontos_sub_rodada_vencedor(std::pair<Dup
             }
         }
 
-        if(mao_maior[0] == cartas_jogadas[1]){
+        if(mao_maior[0] == cartas_jogadas[2]){
             std::cout << "A dupla 1 foi a ganhadora da " << pt << "° sub_rodada" << std::endl;
             if(pt == 1){
                 pontuacao_sub_rodada.first = pontuacao_sub_rodada.first + 3;
@@ -200,7 +200,7 @@ std::pair<unsigned, unsigned> Vencedor::pontos_sub_rodada_vencedor(std::pair<Dup
             }
         }
 
-        if(mao_maior[0] == cartas_jogadas[2]){
+        if(mao_maior[0] == cartas_jogadas[1]){
             std::cout << "A dupla 2 foi a ganhadora da " << pt << "° sub_rodada" << std::endl;
             if(pt == 1){
                 pontuacao_sub_rodada.second = pontuacao_sub_rodada.second + 3;
@@ -248,18 +248,18 @@ std::pair<unsigned, unsigned> Vencedor::pontos_sub_rodada_empate(std::pair<Dupla
         std::vector<Carta> empate_carta = regras.maior_carta(cartas_jogadas);
         size_t i = empate_carta.size();
 
-            if(empate_carta[0].peso == cartas_jogadas[0].peso && empate_carta[0].peso == cartas_jogadas[2].peso
+            if(empate_carta[0].peso == cartas_jogadas[0].peso && empate_carta[0].peso == cartas_jogadas[1].peso
             || empate_carta[0].peso == cartas_jogadas[0].peso && empate_carta[0].peso == cartas_jogadas[3].peso){
                 pontuacao_sub_rodada.first +=2;
                 pontuacao_sub_rodada.second +=2;
             }
 
-            else if(empate_carta[0].peso == cartas_jogadas[1].peso && empate_carta[0].peso == cartas_jogadas[2].peso
+            else if(empate_carta[0].peso == cartas_jogadas[2].peso && empate_carta[0].peso == cartas_jogadas[1].peso
             || empate_carta[0].peso == cartas_jogadas[1].peso && empate_carta[0].peso == cartas_jogadas[3].peso){
                 pontuacao_sub_rodada.first +=2;
                 pontuacao_sub_rodada.second +=2;
             }
-            else if(empate_carta[0].peso == cartas_jogadas[0].peso && empate_carta[0].peso == cartas_jogadas[1].peso){
+            else if(empate_carta[0].peso == cartas_jogadas[0].peso && empate_carta[0].peso == cartas_jogadas[2].peso){
                     
                 std::cout << "A dupla 1 foi a ganhadora da " << pt << "° sub_rodada" << std::endl;
                 if(pt == 1){
@@ -273,7 +273,7 @@ std::pair<unsigned, unsigned> Vencedor::pontos_sub_rodada_empate(std::pair<Dupla
                     return pontuacao_sub_rodada;
                 }
             }
-            else if(empate_carta[0].peso == cartas_jogadas[2].peso && empate_carta[0].peso == cartas_jogadas[3].peso){
+            else if(empate_carta[0].peso == cartas_jogadas[1].peso && empate_carta[0].peso == cartas_jogadas[3].peso){
                     std::cout << "A dupla 2 foi a ganhadora da " << pt << "° sub_rodada" << std::endl;
                 if(pt == 1){
                     pontuacao_sub_rodada.second = pontuacao_sub_rodada.second + 3;
