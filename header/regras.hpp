@@ -22,7 +22,12 @@ class Vencedor{
 };
 
 class Pede_Truco{
-    
+    public:
+        bool condition;
+        bool condition_aceitas;
+        std::pair<bool,std::string> pede_truco(std::pair<Dupla, Dupla>& duplas, unsigned i);
+        std::pair<bool,std::string> aceita_truco(std::pair<Dupla, Dupla>& duplas, unsigned i);
+        unsigned pt_truco(bool condicao);
 };
 
 #endif
