@@ -14,7 +14,7 @@ int main(){
         
         Regras regras;
         char t;
-        std::cout << "Seres humanos, os senhores gostariam de saber as regras do nosso truco? Fizemos algumas adaptações do truco convencional... :" << std::endl;
+        std::cout << "Seres humanos, os senhores gostariam de saber as regras do nosso truco? Fizemos algumas adaptações do truco convencional... : [Y/N]" << std::endl;
         std::cin >> t;
         regras.exibe_regra(t);
         std::vector<Jogador> jogadores = cadastro_jogadores();
