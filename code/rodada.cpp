@@ -57,7 +57,7 @@ void Rodada::exibe_cartas(std::pair<Dupla, Dupla> duplas, unsigned j){
     }
 }
 
-void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h){
+void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h, Pede_Truco truquinho){
     
     Regras regras;
     Rodada rodada;
@@ -70,9 +70,6 @@ void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h){
     std::pair<unsigned int, unsigned int> pontuacao_SR;
     pontuacao_SR.first = 0;
     pontuacao_SR.second = 0;
-    Pede_Truco truquinho;
-    truquinho.condition = false;
-    truquinho.condition_aceitas = false;
 
     rodada.distribui_cartas(duplas_h);
     Sub_Rodada sub_rodada;
@@ -83,7 +80,7 @@ void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h){
         
         rodada.exibe_cartas(duplas_h,j);
         std::vector<Carta> cartas_jogadas;
-        cartas_jogadas = sub_rodada.joga_carta(duplas_h, indice);
+        cartas_jogadas = sub_rodada.joga_carta(duplas_h, indice, truquinho);
         std::vector<Carta> maior_carta;
         maior_carta = regras.maior_carta(cartas_jogadas);
         
@@ -141,20 +138,16 @@ void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h){
 
     }
      if(sub_rodada.pontuacao_sub_rodada_dupla1 >= 5){
-        truquinho.condition = false;
-        truquinho.condition_aceitas = false;
         duplas_h.first.pontuacao += 2;
         std::cout << "-------------------------------------------------------------------" << std::endl;
-        std::cout << "A dupla 1 ganhou a primeira rodada e recebe 2 pontos" << std::endl;
+        std::cout << "A dupla 1 ganhou a rodada e recebe 2 pontos" << std::endl;
         std::cout << "Pontuação atual: " << duplas_h.first.pontuacao << std::endl;
         std::cout << "Pontuação atual: " << duplas_h.second.pontuacao << std::endl;
         std::cout << "-------------------------------------------------------------------" << std::endl;
      } else if (sub_rodada.pontuacao_sub_rodada_dupla2 >= 5){
-        truquinho.condition = false;
-        truquinho.condition_aceitas = false;
         duplas_h.second.pontuacao += 2;
         std::cout << "-------------------------------------------------------------------" << std::endl;
-        std::cout << "A dupla 2 ganhou a primeira rodada e recebe 2 pontos" << std::endl;
+        std::cout << "A dupla 2 ganhou a rodada e recebe 2 pontos" << std::endl;
         std::cout << "Pontuação atual: " << duplas_h.first.pontuacao << std::endl;
         std::cout << "Pontuação atual: " << duplas_h.second.pontuacao << std::endl;
         std::cout << "-------------------------------------------------------------------" << std::endl;

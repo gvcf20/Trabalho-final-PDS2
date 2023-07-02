@@ -6,19 +6,23 @@
 #include <string>
 #include <vector>
 
-Pede_Truco truquinho;
-
-std::vector<Carta> Sub_Rodada::joga_carta(std::pair<Dupla, Dupla>& duplas, unsigned i){
+std::vector<Carta> Sub_Rodada::joga_carta(std::pair<Dupla, Dupla>& duplas, unsigned i, Pede_Truco truquinho){
     
     int i1 = -1, i2 = -1, i3 = -1, i4 = -1;
+    std::pair<bool,std::string> jogador_truco_SR;
+    std::pair<bool,std::string> jogador_aceita_truco_SR;
     std::vector<Carta>mao_rodada;
     Rodada rodada;
-
+    
     if(truquinho.condition == false){
-        truquinho.condition = truquinho.pede_truco(duplas, 1);
+        jogador_truco_SR = truquinho.pede_truco(duplas, 1);
+        truquinho.condition = jogador_truco_SR.first;
     }
-    if(truquinho.condition == true && truquinho.condition_aceitas == false){
-        truquinho.condition_aceitas = truquinho.aceita_truco(duplas,1);
+    if(truquinho.condition == true && truquinho.condition_aceitas == false && 
+    jogador_truco_SR.second != duplas.first.duplinha.first.nome_jogador &&
+    jogador_truco_SR.second != duplas.first.duplinha.second.nome_jogador){
+        jogador_aceita_truco_SR = truquinho.aceita_truco(duplas,1);
+        truquinho.condition_aceitas= jogador_aceita_truco_SR.first;
     }
     while(i1 < 0 || i1 > i){
         std::cout << duplas.first.duplinha.first.nome_jogador <<" suas cartas estão numeradas de 0 a " << i <<" Escolha uma, entre 0 e " << i << " para lançar: " << std::endl;
@@ -27,12 +31,18 @@ std::vector<Carta> Sub_Rodada::joga_carta(std::pair<Dupla, Dupla>& duplas, unsig
     mao_rodada.push_back(duplas.first.duplinha.first.mao[i1]);
     duplas.first.duplinha.first.mao.erase(duplas.first.duplinha.first.mao.begin() + i1);
     
-    if(truquinho.condition == false){
-        truquinho.condition = truquinho.pede_truco(duplas,2);
+
+   if(truquinho.condition == false){
+        jogador_truco_SR = truquinho.pede_truco(duplas, 2);
+        truquinho.condition = jogador_truco_SR.first;
     }
-    if(truquinho.condition == true && truquinho.condition_aceitas == false){
-        truquinho.condition_aceitas = truquinho.aceita_truco(duplas,2);
+    if(truquinho.condition == true && truquinho.condition_aceitas == false && 
+    jogador_truco_SR.second != duplas.first.duplinha.first.nome_jogador &&
+    jogador_truco_SR.second != duplas.first.duplinha.second.nome_jogador){
+        jogador_aceita_truco_SR = truquinho.aceita_truco(duplas,2);
+        truquinho.condition_aceitas= jogador_aceita_truco_SR.first;
     }
+
     while(i2 < 0 || i2 > i){
         std::cout << duplas.first.duplinha.second.nome_jogador <<" suas cartas estão numeradas de 0 a " << i <<" Escolha uma, entre 0 e " << i << " para lançar: " << std::endl;
         std:: cin >> i2; std::cout << std::endl;
@@ -41,11 +51,16 @@ std::vector<Carta> Sub_Rodada::joga_carta(std::pair<Dupla, Dupla>& duplas, unsig
     duplas.first.duplinha.second.mao.erase(duplas.first.duplinha.second.mao.begin() + i2);    
 
     if(truquinho.condition == false){
-        truquinho.condition = truquinho.pede_truco(duplas,3);
+        jogador_truco_SR = truquinho.pede_truco(duplas, 3);
+        truquinho.condition = jogador_truco_SR.first;
     }
-    if(truquinho.condition == true && truquinho.condition_aceitas == false){
-        truquinho.condition_aceitas = truquinho.aceita_truco(duplas,3);
+    if(truquinho.condition == true && truquinho.condition_aceitas == false && 
+    jogador_truco_SR.second != duplas.second.duplinha.first.nome_jogador &&
+    jogador_truco_SR.second != duplas.second.duplinha.second.nome_jogador){
+        jogador_aceita_truco_SR = truquinho.aceita_truco(duplas,3);
+        truquinho.condition_aceitas= jogador_aceita_truco_SR.first;
     }
+
     while(i3 < 0 || i3 > i){
         std::cout << duplas.second.duplinha.first.nome_jogador << " suas cartas estão numeradas de 0 a " << i <<" Escolha uma, entre 0 e " << i << " para lançar: " << std::endl;
         std:: cin >> i3; std::cout << std::endl;
@@ -53,12 +68,18 @@ std::vector<Carta> Sub_Rodada::joga_carta(std::pair<Dupla, Dupla>& duplas, unsig
     mao_rodada.push_back(duplas.second.duplinha.first.mao[i3]);
     duplas.second.duplinha.first.mao.erase(duplas.second.duplinha.first.mao.begin() + i3);
 
+
     if(truquinho.condition == false){
-        truquinho.condition = truquinho.pede_truco(duplas,4);
+        jogador_truco_SR = truquinho.pede_truco(duplas, 4);
+        truquinho.condition = jogador_truco_SR.first;
     }
-    if(truquinho.condition == true && truquinho.condition_aceitas == false){
-        truquinho.condition_aceitas = truquinho.aceita_truco(duplas,4);
+    if(truquinho.condition == true && truquinho.condition_aceitas == false && 
+    jogador_truco_SR.second != duplas.second.duplinha.first.nome_jogador &&
+    jogador_truco_SR.second != duplas.second.duplinha.second.nome_jogador){
+        jogador_aceita_truco_SR = truquinho.aceita_truco(duplas,4);
+        truquinho.condition_aceitas= jogador_aceita_truco_SR.first;
     }
+
     while(i4 < 0 || i4 > i){
         std::cout << duplas.second.duplinha.second.nome_jogador <<" suas cartas estão numeradas de 0 a " << i <<" Escolha uma, entre 0 e " << i << " para lançar: " << std::endl;
         std:: cin >> i4; std::cout << std::endl;

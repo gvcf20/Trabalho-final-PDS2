@@ -296,8 +296,8 @@ std::pair<unsigned, unsigned> Vencedor::pontos_sub_rodada_empate(std::pair<Dupla
 
 } 
 
-bool Pede_Truco::pede_truco(std::pair<Dupla, Dupla>& duplas, unsigned i){
-    
+std::pair<bool,std::string> Pede_Truco::pede_truco(std::pair<Dupla, Dupla>& duplas, unsigned i){
+    std::pair<bool,std::string> jogador_truco;
     char pede;
     bool condicao = false;
     if(i == 1){
@@ -322,11 +322,27 @@ bool Pede_Truco::pede_truco(std::pair<Dupla, Dupla>& duplas, unsigned i){
     if(pede == 'Y'){
         condicao = true;
     }
-
-    return condicao;
-
+    if(i == 1){
+        jogador_truco.first = condicao;
+        jogador_truco.second = duplas.first.duplinha.first.nome_jogador;
+    }
+    else if(i == 2){
+        jogador_truco.first = condicao;
+        jogador_truco.second = duplas.first.duplinha.second.nome_jogador;
+    }
+    else if(i == 3){
+        jogador_truco.first = condicao;
+        jogador_truco.second = duplas.second.duplinha.first.nome_jogador;
+    }
+    else if(i == 4){
+        jogador_truco.first = condicao;
+        jogador_truco.second = duplas.second.duplinha.second.nome_jogador;
+    }
+    return jogador_truco;
+    
 }
-bool Pede_Truco::aceita_truco(std::pair<Dupla, Dupla>& duplas, unsigned i){
+std::pair<bool,std::string> Pede_Truco::aceita_truco(std::pair<Dupla, Dupla>& duplas, unsigned i){
+    std::pair<bool,std::string> jogador_truco;
     char aceita;
     bool condicao = false;
     if(i == 1){
@@ -342,12 +358,31 @@ bool Pede_Truco::aceita_truco(std::pair<Dupla, Dupla>& duplas, unsigned i){
         std::cout << "O jogador " << duplas.second.duplinha.second.nome_jogador
         << " Deseja aceitar o pedido de truco? Y/N" << std::endl;
     }
-    std::cin >> aceita; 
     std::cout << std::endl;
+    while(aceita != 'N' && aceita != 'Y'){
+        std::cout << "Y/N? " << std::endl;
+        std::cin >> aceita;
+    } 
     if(aceita == 'Y'){
         condicao = true;
     }
-    return condicao;
+    if(i == 1){
+        jogador_truco.first = condicao;
+        jogador_truco.second = duplas.first.duplinha.first.nome_jogador;
+    }
+    else if(i == 2){
+        jogador_truco.first = condicao;
+        jogador_truco.second = duplas.first.duplinha.second.nome_jogador;
+    }
+    else if(i == 3){
+        jogador_truco.first = condicao;
+        jogador_truco.second = duplas.second.duplinha.first.nome_jogador;
+    }
+    else if(i == 4){
+        jogador_truco.first = condicao;
+        jogador_truco.second = duplas.second.duplinha.second.nome_jogador;
+    }
+    return jogador_truco;
 } 
 
 unsigned Pede_Truco::pt_truco(bool condicao){
