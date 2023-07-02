@@ -68,7 +68,6 @@ void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h, Pede_Truco
     std::pair<Jogador, std::vector<Carta>> jogador_vencedor_SR;
     std::pair<Dupla, std::vector<Carta>> Dupla_empate_SR;
     std::pair<unsigned int, unsigned int> pontuacao_SR;
-    std::pair<std::vector<Carta>,std::string> carta_truco;
     pontuacao_SR.first = 0;
     pontuacao_SR.second = 0;
 
@@ -76,6 +75,9 @@ void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h, Pede_Truco
     Sub_Rodada sub_rodada;
     sub_rodada.pontuacao_sub_rodada_dupla1 = 0;
     sub_rodada.pontuacao_sub_rodada_dupla2 = 0;
+    std::pair<std::vector<Carta>,std::string> carta_truco;
+    std::string aceita_trucao;
+    int ganho = 2;
 
      while(sub_rodada.pontuacao_sub_rodada_dupla1 < 5 || sub_rodada.pontuacao_sub_rodada_dupla2 < 5){
         
@@ -89,6 +91,10 @@ void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h, Pede_Truco
             sub_rodada.pontuacao_sub_rodada_dupla1 = 10;
             break;
         } else{
+            if(truquinho.condition_aceitas)
+            {
+                ganho = 4;
+            }
             std::vector<Carta> maior_carta;
             maior_carta = regras.maior_carta(carta_truco.first);
             
@@ -136,6 +142,7 @@ void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h, Pede_Truco
 
             }
         }
+        
         sub_rodada.pontuacao_sub_rodada_dupla1 += pontuacao_SR.first;
         sub_rodada.pontuacao_sub_rodada_dupla2 += pontuacao_SR.second;
         if(indice > 0){
@@ -143,19 +150,20 @@ void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h, Pede_Truco
         } else break;
         ptl = ptl + 1;
         j = j - 1;
-
+        
     }
+
      if(sub_rodada.pontuacao_sub_rodada_dupla1 >= 5){
-        duplas_h.first.pontuacao += 2;
+        duplas_h.first.pontuacao += ganho;
         std::cout << "-------------------------------------------------------------------" << std::endl;
-        std::cout << "A dupla 1 ganhou a rodada e recebe 2 pontos" << std::endl;
+        std::cout << "A dupla 1 ganhou a rodada e recebe " << ganho <<" pontos" << std::endl;
         std::cout << "Pontuação atual: " << duplas_h.first.pontuacao << std::endl;
         std::cout << "Pontuação atual: " << duplas_h.second.pontuacao << std::endl;
         std::cout << "-------------------------------------------------------------------" << std::endl;
      } else if (sub_rodada.pontuacao_sub_rodada_dupla2 >= 5){
-        duplas_h.second.pontuacao += 2;
+        duplas_h.second.pontuacao += ganho;
         std::cout << "-------------------------------------------------------------------" << std::endl;
-        std::cout << "A dupla 2 ganhou a rodada e recebe 2 pontos" << std::endl;
+        std::cout << "A dupla 2 ganhou a rodada e recebe " << ganho <<" pontos" << std::endl;
         std::cout << "Pontuação atual: " << duplas_h.first.pontuacao << std::endl;
         std::cout << "Pontuação atual: " << duplas_h.second.pontuacao << std::endl;
         std::cout << "-------------------------------------------------------------------" << std::endl;

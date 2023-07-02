@@ -314,7 +314,7 @@ std::pair<bool,std::string> Pede_Truco::pede_truco(std::pair<Dupla, Dupla>& dupl
         << " Deseja pedir truco? " << std::endl;
     }
     std::cout << std::endl;
-    while(pede != 'N' && pede != 'Y'){
+    while(pede != 'N' && pede != 'n' && pede != 'Y' && pede != 'n'){
         std::cout << "Y/N? " << std::endl;
         std::cin >> pede;
     } 
@@ -359,7 +359,7 @@ std::pair<bool,std::string> Pede_Truco::aceita_truco(std::pair<Dupla, Dupla>& du
         << " Deseja aceitar o pedido de truco? Y/N" << std::endl;
     }
     std::cout << std::endl;
-    while(aceita != 'N' && aceita != 'Y'){
+    while(aceita != 'N' && aceita != 'n' && aceita != 'Y' && aceita != 'n'){
         std::cout << "Y/N? " << std::endl;
         std::cin >> aceita;
     } 
