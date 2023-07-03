@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentação Jogo de Truco: user_stories</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Documentação Jogo de Truco<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div><div class="header">
+  <div class="headertitle"><div class="title">user_stories</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>[Projeto] Entrega Parcial 1 - Histórias de Usuário</p>
+<p>Tema: Truco</p>
+<p>Grupo: Gabriel Vaz C.Ferreira, Bruno Kang Wu, Philip Ribeiro Costa, Gabriel Silva de Araujo</p>
+<p>User stories:</p>
+<ul>
+<li><p class="startli">Eu, como iniciante em jogos de baralho, quero poder ver as regras gerais do truco, para começar a jogar corretamente</p>
+<p class="startli">Critérios de aceitação:</p><ul>
+<li>Exibir quais são as cartas no truco</li>
+<li>Exibir a quantidade inicial de cartas</li>
+<li>Exibir as regras do jogo</li>
+<li>Exibir os critérios de pontuação</li>
+</ul>
+</li>
+</ul>
+<hr  />
+<ul>
+<li><p class="startli">Eu, Como jogador de truco, quero poder ver as cartas jogadas durante a rodada, para desenvolver uma estratégia.</p>
+<p class="startli">Critérios de aceitação:</p><ul>
+<li>O jogo deve exibir as cartas jogadas por cada jogador durante a partida.</li>
+<li>As cartas jogadas devem ser exibidas na ordem em que foram jogadas.</li>
+<li>Exibir um histórico com as cartas jogadas em rodadas anteriores.</li>
+<li>Exibir uma mensagem de erro se não tiver nenhuma carta jogada.</li>
+</ul>
+</li>
+</ul>
+<hr  />
+<ul>
+<li><p class="startli">Eu, como jogador de truco, quero poder pedir truco quando achar interessante, pois essa é uma possibilidade do jogo.</p>
+<p class="startli">Critérios de aceitação:</p><ul>
+<li>Exibir que posso pedir truco</li>
+<li>Somente exibir essa opção quando estiver na minha vez de jogar</li>
+<li>Alterar o valor da rodada para 4 pontos caso o adversário aceite</li>
+<li>Se o adversário não aceitar, ele perde a rodada</li>
+</ul>
+</li>
+</ul>
+<hr  />
+<ul>
+<li><p class="startli">Eu, como jogador de truco, quero poder pedir 6 ou sair quando o adversário pedir truco, para aumentar o valor da rodada ou desistir da rodada</p>
+<p class="startli">Critérios de aceitação:</p><ul>
+<li>Exibir que posso pedir 6 ou sair</li>
+<li>Alterar o valor da rodada para 6 pontos caso o adversário aceite</li>
+<li>Se o adversário não aceitar, ele perde a rodada</li>
+<li>Somente exibir essa opção quando estiver na minha vez de jogar</li>
+</ul>
+</li>
+</ul>
+<hr  />
+<ul>
+<li><p class="startli">Eu, como jogador de truco, quero poder pedir 9 ou sair quando o adversário pedir 6, para aumentar o valor da rodada ou desistir da rodada</p>
+<p class="startli">Critérios de aceitação:</p><ul>
+<li>Exibir que posso pedir 12 ou sair</li>
+<li>Alterar o valor da rodada para 9 pontos caso o adversário aceite</li>
+<li>Se o adversário não aceitar, ele perde a rodada</li>
+<li>Somente exibir essa opção quando estiver na minha vez de jogar</li>
+</ul>
+</li>
+</ul>
+<hr  />
+<ul>
+<li><p class="startli">Eu, como jogador de truco, quero poder pedir 12 ou sair quando o adversário pedir 9, para aumentar o valor da rodada ou desistir da rodada caso</p>
+<p class="startli">Critérios de aceitação:</p><ul>
+<li>Exibir que posso pedir 12 ou sair</li>
+<li>Alterar o valor da rodada para 12 pontos caso o adversário aceite</li>
+<li>Se o adversário não aceitar, ele perde a rodada</li>
+<li>Somente exibir essa opção quando estiver na minha vez de jogar</li>
+</ul>
+</li>
+</ul>
+<hr  />
+<ul>
+<li>Eu, como jogador de truco, quero poder ver as cartas na minha mão, para poder decidir qual jogada irei realizar.</li>
+</ul>
+<p>Critérios de aceitação:</p><ul>
+<li>Exibir as cartas na mão</li>
+<li>Poder selecionar uma carta</li>
+<li>Não exibir cartas quando a mão estiver vazia</li>
+<li>Poder jogar uma carta</li>
+</ul>
+<hr  />
+<ul>
+<li>Eu, como jogador de truco, quero poder ver o quanto está a pontuação de cada rodada e quanto está o placar para poder me situar melhor no jogo.</li>
+</ul>
+<p>Critérios de aceitação:</p><ul>
+<li>Exibição de placar</li>
+<li>Exibição da pontuação de rodada</li>
+<li>Escolha do número de partidas por cada jogo (Melhor de 3, 5...).</li>
+</ul>
+<hr  />
+<ul>
+<li><p class="startli">Eu, como jogador de truco, quero poder saber de quem é a vez de jogar, para poder me situar melhor no jogo.</p>
+<p class="startli">Critérios de aceitação:</p><ul>
+<li>Exibir mensagem "Agora é a vez do Jogador X"</li>
+<li>Saber quando é a minha vez de jogar. </li>
+</ul>
+</li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+</small></address>
+</body>
+</html>
