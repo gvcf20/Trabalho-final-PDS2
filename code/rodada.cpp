@@ -84,7 +84,6 @@ void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h, Pede_Truco
         rodada.exibe_cartas(duplas_h,j);
         carta_truco = sub_rodada.joga_carta(duplas_h, indice, truquinho);
 
-<<<<<<< HEAD
         if(carta_truco.second == "Truco recusado dupla 1"){
             sub_rodada.pontuacao_sub_rodada_dupla2 = 10;
             break;
@@ -95,35 +94,6 @@ void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h, Pede_Truco
             if(truquinho.condition_aceitas)
             {
                 ganho = 4;
-=======
-        if(condicao == true){
-           
-            jogador_vencedor_SR = vencedor.verifica_vencedor_SR(cartas_jogadas, duplas_h);
-            pontuacao_SR = vencedor.pontos_sub_rodada_vencedor(duplas_h , cartas_jogadas, ptl);
-            std::cout << " " << std::endl;
-
-            std::cout << "-------------------------------------------------------------------" << std::endl;
-            std::cout <<"O jogador: " << jogador_vencedor_SR.first.nome_jogador <<
-            " ganhou a partida com a carta: " << jogador_vencedor_SR.second[0].toString() << std::endl;
-            std::cout << "-------------------------------------------------------------------" << std::endl;
-        }
-
-        else if(condicao1){
-            Dupla_empate_SR = vencedor.verifica_empate_SR(cartas_jogadas, duplas_h);
-            pontuacao_SR = vencedor.pontos_sub_rodada_vencedor(duplas_h , cartas_jogadas, ptl);
-
-            if(Dupla_empate_SR.first.duplinha.first.nome_jogador == duplas_h.first.duplinha.first.nome_jogador
-            && Dupla_empate_SR.first.duplinha.second.nome_jogador == duplas_h.first.duplinha.second.nome_jogador
-            || Dupla_empate_SR.first.duplinha.first.nome_jogador == duplas_h.second.duplinha.first.nome_jogador
-            && Dupla_empate_SR.first.duplinha.second.nome_jogador == duplas_h.second.duplinha.second.nome_jogador){
-                
-                std::cout << "-------------------------------------------------------------------" << std::endl;
-                std::cout << "Não houve um empate entre os jogadores: " << Dupla_empate_SR.first.duplinha.first.nome_jogador 
-                << " e " << Dupla_empate_SR.first.duplinha.second.nome_jogador << ", devido a terem jogado as cartas: "
-                << Dupla_empate_SR.second[0].toString() << " e " << Dupla_empate_SR.second[1].toString()
-                << " pois pertecem a mesma dupla. " << std::endl;
-                std::cout << "-------------------------------------------------------------------" << std::endl;
->>>>>>> main
             }
             std::vector<Carta> maior_carta;
             maior_carta = regras.maior_carta(carta_truco.first);
@@ -191,22 +161,12 @@ void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h, Pede_Truco
         std::cout << "Pontuação atual: " << duplas_h.second.pontuacao << std::endl;
         std::cout << "-------------------------------------------------------------------" << std::endl;
      } else if (sub_rodada.pontuacao_sub_rodada_dupla2 >= 5){
-<<<<<<< HEAD
         duplas_h.second.pontuacao += ganho;
         std::cout << "-------------------------------------------------------------------" << std::endl;
         std::cout << "A dupla 2 ganhou a rodada e recebe " << ganho <<" pontos" << std::endl;
         std::cout << "Pontuação atual: " << duplas_h.first.pontuacao << std::endl;
         std::cout << "Pontuação atual: " << duplas_h.second.pontuacao << std::endl;
         std::cout << "-------------------------------------------------------------------" << std::endl;
-=======
-        std::cout << " ----------------------------" << std::endl;
-         duplas_h.second.pontuacao += 2;
-         std::cout << "-------------------------------------------------------------------" << std::endl;
-         std::cout << "A dupla 2 ganhou a primeira rodada e recebe 2 pontos" << std::endl;
-         std::cout << "Pontuação atual: " << duplas_h.first.pontuacao << std::endl;
-         std::cout << "Pontuação atual: " << duplas_h.second.pontuacao << std::endl;
-         std::cout << "-------------------------------------------------------------------" << std::endl;
->>>>>>> main
     }
 
 

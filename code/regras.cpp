@@ -1,6 +1,7 @@
 #include "../header/regras.hpp"
 #include "../header/sub_rodada.hpp"
 #include <iostream>
+#include <limits>
 
 std::vector<Carta> Regras::maior_carta(std::vector<Carta>& cartas){
     int min,minimal;
@@ -22,34 +23,48 @@ std::vector<Carta> Regras::maior_carta(std::vector<Carta>& cartas){
     
 }
 
-void Regras::exibe_regra(char c){
-    if(c == 'Y' || c == 'y' || c == 's' || c == 'S'){
+void Regras::exibe_regra(){
+    char resposta;
+    while (true) {
+        std::cout << std::endl;
+        std::cin >> resposta;
+        resposta = std::toupper(resposta);
 
-        std::cout << "-------------------------------------------------------------------" << std::endl;
-        std::cout << "MANILHAS: A ordem das cartas mais fortes está disposta como segue: " << std::endl
-        << "Folhas-QUATRO; Copas-SETE; As-ESPADA; OURO-SETE; TRÊS; DOIS; AS; REI; VALETE" << std::endl
-        <<"; RAINHA; SETE; CINCO; QUATRO; Os que não tiveram naipe especificados, são"    << std::endl
-        <<" de qualquer naipe exceto pelos 4 primeiros supracitados." << std::endl;
-        std::cout << "-------------------------------------------------------------------" << std::endl;
-        std::cout << "PONTUAÇÃO: Para se ganhar um jogo, deve-se ganhar 2 partidas, e " << std::endl
-        <<"para se ganhar uma partida, deve-se ganhar 12 pontos, que são ganhos de dois " <<std::endl
-        <<"em dois a cada rodada vencida. Por fim, para se ganhar uma rodada, deve-se de " << std::endl
-        <<"ganhar 5 pontos numa sub_rodada. " <<std::endl;
-        std::cout << "-------------------------------------------------------------------" << std::endl;
-        std::cout << "Pontuação Sub rodada: Uma sub_rodada tem no máximo, 3 lances, de " <<std::endl
-        <<"modo que se os 5 pontos não forem atingindos, a sub_rodada não distribui pon_" <<std::endl
-        <<"tos para nenhuma das duplas. Dito isso, o primeiro lance da sub_rodada vale" <<std::endl
-        <<" 3 pontos, a segunda 2, a terceira 3 e 2 pontos em caso de empate. É deixa_ " <<std::endl
-        <<"xado a cargo dos jogadores como exercício, pensarem nas possibilidades relativas" <<std::endl
-        <<"do sistema de pontuação e pesquisarem sobre as outras regras do truco. (Dica: " << std::endl
-        << "abra o seu navegador e use o google e tente pesquisar digitando com o teclado.) " << std::endl; 
-        std::cout << "-------------------------------------------------------------------" << std::endl;
-
-        std::cout << "A partida vai começar ! " << std::endl;
-    } else {
-        std::cout << "A partida vai começar ! " << std::endl;
+        if (resposta == 'Y') {
+            std::cout << "Você escolheu SIM. As regras do jogo são: !" << std::endl;
+            std::cout << "-------------------------------------------------------------------" << std::endl;
+            std::cout << "MANILHAS: A ordem das cartas mais fortes está disposta como segue: " << std::endl
+            << "Folhas-QUATRO; Copas-SETE; As-ESPADA; OURO-SETE; TRÊS; DOIS; AS; REI; VALETE" << std::endl
+            <<"; RAINHA; SETE; CINCO; QUATRO; Os que não tiveram naipe especificados, são"    << std::endl
+            <<" de qualquer naipe exceto pelos 4 primeiros supracitados." << std::endl;
+            std::cout << "-------------------------------------------------------------------" << std::endl;
+            std::cout << "PONTUAÇÃO: Para se ganhar um jogo, deve-se ganhar 2 partidas, e " << std::endl
+            <<"para se ganhar uma partida, deve-se ganhar 12 pontos, que são ganhos de dois " <<std::endl
+            <<"em dois a cada rodada vencida. Por fim, para se ganhar uma rodada, deve-se de " << std::endl
+            <<"ganhar 5 pontos numa sub_rodada. " <<std::endl;
+            std::cout << "-------------------------------------------------------------------" << std::endl;
+            std::cout << "Pontuação Sub rodada: Uma sub_rodada tem no máximo, 3 lances, de " <<std::endl
+            <<"modo que se os 5 pontos não forem atingindos, a sub_rodada não distribui pon_" <<std::endl
+            <<"tos para nenhuma das duplas. Dito isso, o primeiro lance da sub_rodada vale" <<std::endl
+            <<" 3 pontos, a segunda 2, a terceira 3 e 2 pontos em caso de empate. É deixa_ " <<std::endl
+            <<"xado a cargo dos jogadores como exercício, pensarem nas possibilidades relativas" <<std::endl
+            <<"do sistema de pontuação e pesquisarem sobre as outras regras do truco. (Dica: " << std::endl
+            << "abra o seu navegador e use o google e tente pesquisar digitando com o teclado.) " << std::endl; 
+            std::cout << "-------------------------------------------------------------------" << std::endl;
+             std::cout << "A partida vai começar ! " << std::endl;
+            break;
+        } else if (resposta == 'N') {
+            std::cout << "Você escolheu NÃO. Deve ser um expert no jogo!!" << std::endl;
+            std::cout << "A partida vai começar ! " << std::endl;
+            break;
+        } else {
+            std::cout << "Entrada inválida! Por favor, digite Y para sim ou N para Não." << std::endl;
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            }
+        }
     }
-}
+
 
  bool Vencedor::vencedor_sub_rodada(std::vector<Carta>& mao_rodada){
     Regras regras;
