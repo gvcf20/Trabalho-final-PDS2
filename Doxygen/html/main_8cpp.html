@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentação Jogo de Truco: Referência do Arquivo code/main.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Documentação Jogo de Truco<span id="projectnumber">&#160;1.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_050edd66366d13764f98250ef6db77f6.html">code</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle"><div class="title">Referência do Arquivo main.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;../header/JOGO_principal.hpp&quot;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Funções</h2>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&#160;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">    6</span>          {</div>
+<div class="line"><span class="lineno">    7</span>    </div>
+<div class="line"><span class="lineno">    8</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;*Olá seres humanos, vocês desejam jogar truco [Y/N]?&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">    9</span>    std::cout &lt;&lt; <span class="stringliteral">&quot; -------------------------------------&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   10</span>    <span class="keywordtype">char</span> c; </div>
+<div class="line"><span class="lineno">   11</span>    std::cin &gt;&gt; c;</div>
+<div class="line"><span class="lineno">   12</span>    std::cout &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   13</span>    <span class="keywordflow">if</span>(c == <span class="charliteral">&#39;Y&#39;</span> || c == <span class="charliteral">&#39;y&#39;</span> || c == <span class="charliteral">&#39;s&#39;</span> || c == <span class="charliteral">&#39;S&#39;</span>){</div>
+<div class="line"><span class="lineno">   14</span>        </div>
+<div class="line"><span class="lineno">   15</span>        Regras regras;</div>
+<div class="line"><span class="lineno">   16</span>        <span class="keywordtype">char</span> t;</div>
+<div class="line"><span class="lineno">   17</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Seres humanos, os senhores gostariam de saber as regras do nosso truco? Fizemos algumas adaptações do truco convencional... : [Y/N]&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   18</span>        std::cin &gt;&gt; t;</div>
+<div class="line"><span class="lineno">   19</span>        regras.exibe_regra(t);</div>
+<div class="line"><span class="lineno">   20</span>        std::vector&lt;Jogador&gt; jogadores = <a class="code hl_function" href="jogo_8cpp.html#a8fc555400d32ebdbf432bd6b279f09b6">cadastro_jogadores</a>();</div>
+<div class="line"><span class="lineno">   21</span>        <a class="code hl_function" href="jogo_8cpp.html#afefa3d07e2d4fefc82aec7c8f4c5c8ce">exibe_jogadores</a>(jogadores);</div>
+<div class="line"><span class="lineno">   22</span>        std::cout &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   23</span>        std::pair&lt;Dupla, Dupla&gt; duplas = <a class="code hl_function" href="jogo_8cpp.html#a9b9ab9b496b338d90aed5064145194ab">set_duplas</a>(jogadores);</div>
+<div class="line"><span class="lineno">   24</span>        <a class="code hl_function" href="jogo_8cpp.html#ad02c51ac435f5e5cf09895f39e4394f2">exibe_duplas</a>(duplas);</div>
+<div class="line"><span class="lineno">   25</span>        duplas.first.jogos_vencidos = 0;</div>
+<div class="line"><span class="lineno">   26</span>        duplas.second.jogos_vencidos = 0;</div>
+<div class="line"><span class="lineno">   27</span>        <span class="keywordflow">while</span>(duplas.first.jogos_vencidos &lt; 2 &amp;&amp; duplas.second.jogos_vencidos &lt; 2){</div>
+<div class="line"><span class="lineno">   28</span>            Regras regras;</div>
+<div class="line"><span class="lineno">   29</span>    </div>
+<div class="line"><span class="lineno">   30</span>            JOGO jogo;</div>
+<div class="line"><span class="lineno">   31</span>            jogo.comeca_jogo(duplas);</div>
+<div class="line"><span class="lineno">   32</span>        </div>
+<div class="line"><span class="lineno">   33</span>        }</div>
+<div class="line"><span class="lineno">   34</span> </div>
+<div class="line"><span class="lineno">   35</span>        <span class="keywordflow">if</span>(duplas.first.jogos_vencidos = 2){</div>
+<div class="line"><span class="lineno">   36</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;Os Vencedores são: &quot;</span> &lt;&lt; duplas.first.duplinha.first.nome_jogador</div>
+<div class="line"><span class="lineno">   37</span>            &lt;&lt; <span class="stringliteral">&quot; e &quot;</span></div>
+<div class="line"><span class="lineno">   38</span>            &lt;&lt; duplas.first.duplinha.second.nome_jogador &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   39</span>        } <span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">   40</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;Os Vencedores são: &quot;</span> &lt;&lt; duplas.second.duplinha.first.nome_jogador</div>
+<div class="line"><span class="lineno">   41</span>            &lt;&lt; <span class="stringliteral">&quot; e &quot;</span></div>
+<div class="line"><span class="lineno">   42</span>            &lt;&lt; duplas.second.duplinha.second.nome_jogador &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   43</span>        }</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>    }</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   48</span>}</div>
+<div class="ttc" id="ajogo_8cpp_html_a8fc555400d32ebdbf432bd6b279f09b6"><div class="ttname"><a href="jogo_8cpp.html#a8fc555400d32ebdbf432bd6b279f09b6">cadastro_jogadores</a></div><div class="ttdeci">std::vector&lt; Jogador &gt; cadastro_jogadores()</div><div class="ttdef"><b>Definição</b> jogo.cpp:5</div></div>
+<div class="ttc" id="ajogo_8cpp_html_a9b9ab9b496b338d90aed5064145194ab"><div class="ttname"><a href="jogo_8cpp.html#a9b9ab9b496b338d90aed5064145194ab">set_duplas</a></div><div class="ttdeci">std::pair&lt; Dupla, Dupla &gt; set_duplas(std::vector&lt; Jogador &gt; jogadoress)</div><div class="ttdef"><b>Definição</b> jogo.cpp:23</div></div>
+<div class="ttc" id="ajogo_8cpp_html_ad02c51ac435f5e5cf09895f39e4394f2"><div class="ttname"><a href="jogo_8cpp.html#ad02c51ac435f5e5cf09895f39e4394f2">exibe_duplas</a></div><div class="ttdeci">void exibe_duplas(const std::pair&lt; Dupla, Dupla &gt; duplas)</div><div class="ttdef"><b>Definição</b> jogo.cpp:36</div></div>
+<div class="ttc" id="ajogo_8cpp_html_afefa3d07e2d4fefc82aec7c8f4c5c8ce"><div class="ttname"><a href="jogo_8cpp.html#afefa3d07e2d4fefc82aec7c8f4c5c8ce">exibe_jogadores</a></div><div class="ttdeci">void exibe_jogadores(const std::vector&lt; Jogador &gt; jogs)</div><div class="ttdef"><b>Definição</b> jogo.cpp:15</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+</small></address>
+</body>
+</html>
