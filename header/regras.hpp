@@ -6,7 +6,7 @@
 class Regras {
     public:
     std::vector<Carta> maior_carta(std::vector<Carta>& cartas);
-    void exibe_regra(char c);
+    void exibe_regra();
 };
 
 class Vencedor{
