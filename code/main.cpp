@@ -6,12 +6,11 @@
 
 int main(){
     
-       std::cout << "*Olá seres humanos, vocês desejam jogar truco [Y/N]?" << std::endl;
+    std::cout << "*Olá seres humanos, vocês desejam jogar truco [Y/N]?" << std::endl;
     std::cout << " -------------------------------------" << std::endl;
 
     char resposta;
     while (true) {
-        std::cout << std::endl;
         std::cin >> resposta;
         resposta = std::toupper(resposta);
 
@@ -57,7 +56,6 @@ int main(){
             << duplas.second.duplinha.second.nome_jogador << std::endl;
         }
 
-    
 
     return 0;
 }
