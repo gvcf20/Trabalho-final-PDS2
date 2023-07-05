@@ -153,22 +153,27 @@ void Comeca_Rodada::comeca_rodada(std::pair <Dupla, Dupla>& duplas_h, Pede_Truco
         
     }
 
-     if(sub_rodada.pontuacao_sub_rodada_dupla1 >= 5){
+     if(sub_rodada.pontuacao_sub_rodada_dupla1 > sub_rodada.pontuacao_sub_rodada_dupla2){
         duplas_h.first.pontuacao += ganho;
         std::cout << "-------------------------------------------------------------------" << std::endl;
         std::cout << "A dupla 1 ganhou a rodada e recebe " << ganho <<" pontos" << std::endl;
         std::cout << "Pontuação atual: " << duplas_h.first.pontuacao << std::endl;
         std::cout << "Pontuação atual: " << duplas_h.second.pontuacao << std::endl;
         std::cout << "-------------------------------------------------------------------" << std::endl;
-     } else if (sub_rodada.pontuacao_sub_rodada_dupla2 >= 5){
+     } else if (sub_rodada.pontuacao_sub_rodada_dupla2 > sub_rodada.pontuacao_sub_rodada_dupla1){
         duplas_h.second.pontuacao += ganho;
         std::cout << "-------------------------------------------------------------------" << std::endl;
         std::cout << "A dupla 2 ganhou a rodada e recebe " << ganho <<" pontos" << std::endl;
         std::cout << "Pontuação atual: " << duplas_h.first.pontuacao << std::endl;
         std::cout << "Pontuação atual: " << duplas_h.second.pontuacao << std::endl;
         std::cout << "-------------------------------------------------------------------" << std::endl;
+    } else if(sub_rodada.pontuacao_sub_rodada_dupla1 == sub_rodada.pontuacao_sub_rodada_dupla2){
+        std::cout << "-------------------------------------------------------------------" << std::endl;
+        std::cout << "As duas duplas empataram, portanto a sub_rodada será resetada e não contará pontos!!! " << std::endl;
+        std::cout << "Pontuação atual: " << duplas_h.first.pontuacao << std::endl;
+        std::cout << "Pontuação atual: " << duplas_h.second.pontuacao << std::endl;
+        std::cout << "-------------------------------------------------------------------" << std::endl;
     }
-
 
 }
 
