@@ -2,6 +2,7 @@
 #include "../header/sub_rodada.hpp"
 #include <iostream>
 #include <limits>
+#include <string>
 
 std::vector<Carta> Regras::maior_carta(std::vector<Carta>& cartas){
     int min,minimal;
@@ -312,6 +313,7 @@ std::pair<unsigned, unsigned> Vencedor::pontos_sub_rodada_empate(std::pair<Dupla
 } 
 
 std::pair<bool,std::string> Pede_Truco::pede_truco(std::pair<Dupla, Dupla>& duplas, unsigned i){
+    
     std::pair<bool,std::string> jogador_truco;
     char pede;
     bool condicao = false;
@@ -328,16 +330,24 @@ std::pair<bool,std::string> Pede_Truco::pede_truco(std::pair<Dupla, Dupla>& dupl
         std::cout << "O jogador " << duplas.second.duplinha.second.nome_jogador
         << " Deseja pedir truco? " << std::endl;
     }
-    std::cout << std::endl;
-    while(pede != 'N' && pede != 'n' && pede != 'Y' && pede != 'y'){
-        std::cout << "Y/N? " << std::endl;
+
+    while (true) {
         std::cin >> pede;
-    } 
-    std::cout << std::endl;
-    if(pede == 'Y' || pede == 'y'){
-        std::cout << "Truco Ladrão!!!!" << std::endl;
-        condicao = true;
+        pede = std::toupper(pede);
+
+        if (pede == 'Y') {
+            std::cout << "Truco Ladrão!!!!" << std::endl;
+            condicao = true;
+            break;
+        } else if (pede == 'N') {
+            break;
+        } else {
+            std::cout << "Entrada inválida! Por favor, digite Y para sim ou N para Não." << std::endl;
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
     }
+        
     if(i == 1){
         jogador_truco.first = condicao;
         jogador_truco.second = duplas.first.duplinha.first.nome_jogador;
@@ -374,17 +384,25 @@ std::pair<bool,std::string> Pede_Truco::aceita_truco(std::pair<Dupla, Dupla>& du
         std::cout << "O jogador " << duplas.second.duplinha.second.nome_jogador
         << " Deseja aceitar o pedido de truco? Y/N" << std::endl;
     }
-    std::cout << std::endl;
-    while(aceita != 'N' && aceita != 'n' && aceita != 'Y' && aceita != 'y'){
-        std::cout << "Y/N? " << std::endl;
+
+    while (true) {
         std::cin >> aceita;
-    } 
-    if(aceita == 'Y' || aceita == 'y'){
-        std::cout << "ENTÃO CAI" << std::endl;
-        condicao = true;
-    } else if(aceita == 'N' || aceita == 'n'){
-        std::cout << "SAI FORA" << std::endl;
+        aceita = std::toupper(aceita);
+
+        if (aceita == 'Y') {
+            std::cout << "ENTÃO CAI" << std::endl;
+            condicao = true;
+            break;
+        } else if (aceita == 'N') {
+            std::cout << "SAI FORA" << std::endl;            
+            break;
+        } else {
+            std::cout << "Entrada inválida! Por favor, digite Y para sim ou N para Não." << std::endl;
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
     }
+    
     if(i == 1){
         jogador_truco.first = condicao;
         jogador_truco.second = duplas.first.duplinha.first.nome_jogador;
@@ -404,8 +422,3 @@ std::pair<bool,std::string> Pede_Truco::aceita_truco(std::pair<Dupla, Dupla>& du
     return jogador_truco;
 } 
 
-unsigned Pede_Truco::pt_truco(bool condicao){
-    if (condicao == false){
-
-    }
-}
