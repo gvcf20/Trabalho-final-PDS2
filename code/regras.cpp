@@ -335,6 +335,7 @@ std::pair<bool,std::string> Pede_Truco::pede_truco(std::pair<Dupla, Dupla>& dupl
     } 
     std::cout << std::endl;
     if(pede == 'Y' || pede == 'y'){
+        std::cout << "Truco Ladrão!!!!" << std::endl;
         condicao = true;
     }
     if(i == 1){
@@ -379,7 +380,10 @@ std::pair<bool,std::string> Pede_Truco::aceita_truco(std::pair<Dupla, Dupla>& du
         std::cin >> aceita;
     } 
     if(aceita == 'Y' || aceita == 'y'){
+        std::cout << "ENTÃO CAI" << std::endl;
         condicao = true;
+    } else if(aceita == 'N' || aceita == 'n'){
+        std::cout << "SAI FORA" << std::endl;
     }
     if(i == 1){
         jogador_truco.first = condicao;
