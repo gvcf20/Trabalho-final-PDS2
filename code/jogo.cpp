@@ -4,7 +4,7 @@
 
 std::vector<Jogador> cadastro_jogadores(){
     std::vector<Jogador> Jogadores;
-    std::cout << "Vamos cadastrar os jogadores" << std::endl; 
+    std::cout << "Insira os nomes dos jogadores: " << std::endl; 
     while(Jogadores.size() < 5){
         Jogador j;
         j.get_nome();

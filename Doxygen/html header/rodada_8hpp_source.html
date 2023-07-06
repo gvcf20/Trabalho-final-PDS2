@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentação Jogo de Truco: Código-Fonte de header/rodada.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Documentação Jogo de Truco<span id="projectnumber">&#160;1.2</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_1ec98ce50fa6ec55b40b8ffb1df38c3c.html">header</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">rodada.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="rodada_8hpp.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef RODADA_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define RODADA_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="sub__rodada_8hpp.html">sub_rodada.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="dupla_8hpp.html">dupla.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_rodada.html">    7</a></span><span class="keyword">class </span><a class="code hl_class" href="class_rodada.html">Rodada</a>{</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_rodada.html#a974d779b64eb15f162834bb5d7a348d8">   10</a></span>    std::vector&lt;Carta&gt; <a class="code hl_function" href="class_rodada.html#a974d779b64eb15f162834bb5d7a348d8">dar_cartas</a>(<a class="code hl_struct" href="struct_baralho.html">Baralho</a>&amp; baralho);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_rodada.html#a740bea0110bec142fcaacf20e215da72">   11</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_rodada.html#a740bea0110bec142fcaacf20e215da72">distribui_cartas</a>(std::pair&lt;Dupla, Dupla&gt;&amp; duplas);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_rodada.html#a75d33db221645618fca63eec1f55a427">   12</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_rodada.html#a75d33db221645618fca63eec1f55a427">exibe_cartas</a>(std::pair&lt;Dupla, Dupla&gt; duplas, <span class="keywordtype">unsigned</span> j);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>};</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_comeca___rodada.html">   18</a></span><span class="keyword">class </span><a class="code hl_class" href="class_comeca___rodada.html">Comeca_Rodada</a>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_comeca___rodada.html#abaa92f364f5c3bbc9df4a6161f9c4d5d">   20</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_comeca___rodada.html#abaa92f364f5c3bbc9df4a6161f9c4d5d">comeca_rodada</a>(std::pair &lt;Dupla,Dupla&gt;&amp; duplas_h, <a class="code hl_class" href="class_pede___truco.html">Pede_Truco</a> truquinho);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>};</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_comeca___rodada_html"><div class="ttname"><a href="class_comeca___rodada.html">Comeca_Rodada</a></div><div class="ttdef"><b>Definição</b> rodada.hpp:18</div></div>
+<div class="ttc" id="aclass_comeca___rodada_html_abaa92f364f5c3bbc9df4a6161f9c4d5d"><div class="ttname"><a href="class_comeca___rodada.html#abaa92f364f5c3bbc9df4a6161f9c4d5d">Comeca_Rodada::comeca_rodada</a></div><div class="ttdeci">void comeca_rodada(std::pair&lt; Dupla, Dupla &gt; &amp;duplas_h, Pede_Truco truquinho)</div></div>
+<div class="ttc" id="aclass_pede___truco_html"><div class="ttname"><a href="class_pede___truco.html">Pede_Truco</a></div><div class="ttdef"><b>Definição</b> regras.hpp:24</div></div>
+<div class="ttc" id="aclass_rodada_html"><div class="ttname"><a href="class_rodada.html">Rodada</a></div><div class="ttdef"><b>Definição</b> rodada.hpp:7</div></div>
+<div class="ttc" id="aclass_rodada_html_a740bea0110bec142fcaacf20e215da72"><div class="ttname"><a href="class_rodada.html#a740bea0110bec142fcaacf20e215da72">Rodada::distribui_cartas</a></div><div class="ttdeci">void distribui_cartas(std::pair&lt; Dupla, Dupla &gt; &amp;duplas)</div></div>
+<div class="ttc" id="aclass_rodada_html_a75d33db221645618fca63eec1f55a427"><div class="ttname"><a href="class_rodada.html#a75d33db221645618fca63eec1f55a427">Rodada::exibe_cartas</a></div><div class="ttdeci">void exibe_cartas(std::pair&lt; Dupla, Dupla &gt; duplas, unsigned j)</div></div>
+<div class="ttc" id="aclass_rodada_html_a974d779b64eb15f162834bb5d7a348d8"><div class="ttname"><a href="class_rodada.html#a974d779b64eb15f162834bb5d7a348d8">Rodada::dar_cartas</a></div><div class="ttdeci">std::vector&lt; Carta &gt; dar_cartas(Baralho &amp;baralho)</div></div>
+<div class="ttc" id="adupla_8hpp_html"><div class="ttname"><a href="dupla_8hpp.html">dupla.hpp</a></div></div>
+<div class="ttc" id="astruct_baralho_html"><div class="ttname"><a href="struct_baralho.html">Baralho</a></div><div class="ttdef"><b>Definição</b> cartas.hpp:107</div></div>
+<div class="ttc" id="asub__rodada_8hpp_html"><div class="ttname"><a href="sub__rodada_8hpp.html">sub_rodada.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+</small></address>
+</body>
+</html>

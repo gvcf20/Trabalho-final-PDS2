@@ -17,7 +17,7 @@ class Rodada{
 
 class Comeca_Rodada{
     public:
-    void comeca_rodada(std::pair <Dupla,Dupla>& duplas_h);
+    void comeca_rodada(std::pair <Dupla,Dupla>& duplas_h, Pede_Truco truquinho);
 };
 
 
