@@ -349,3 +349,18 @@ Relacionamentos:
 A classe Sub_Rodada possui relacionamentos de amizade com as classes JOGO, Vencedor e Comeca_Rodada, permitindo o acesso aos membros privados dessas classes.
 
 -----------------------------------------------------------------------------------------------------
+Funcionamento do jogo (Perspectiva do usuário):
+
+O programa inicia perguntando se deseja-se jogar truco. Em caso de resposta negativa, encerra-se. Caso contrário, pergunta-se agora se os jogadores já conhecem as regras. Em caso de resposta negativa, mostra-se as regras. Caso os jogadores já conheçam as regras, segue-se para o cadastro dos jogadores em que, um por um, cada jogador deve inserir seu nome. A definição das duplas é feita automaticamente, sendo os dois primeiros jogadores cadastrados formam a dupla 1 e os dois últimos a dupla 2. 
+Ao dar início ao jogo, as cartas são embaralhadas e distribuídas. Começando pelo primeiro jogador cadastrado e assim sucessivamente, cada jogador é questionado se deseja pedir truco, desde que outro jogador já não tenha peço anteriormente na mesma sub rodada. Em seguida, para jogar uma carta o jogador deve inserir um número relativo a posição da carta no seu array de cartas, que pode variar de 0 a 2. Caso um jogador escolha pedir truco, o jogador seguinte é questionado se deseja aceitar o pedido de truco, se ele aceitar a partida segue e se ele negar a rodada é vencida pela outra dupla automaticamente.
+Ao final de cada sub rodada, imprime-se na tela qual dupla a venceu. Ao final de cada rodada imprime-se na tela a dupla vencedora e o placar parcial do jogo. Quando uma dupla vence um jogo,imprime-se na tela a dupla vencedora.
+
+-----------------------------------------------------------------------------------------------------
+Tratamento de entradas inesperadas:
+
+Perguntas de Sim ou Não: A entrada deve ser Y ou N. Qualquer entrada diferente disso, irá retornar que a entrada é inválida e deve-se digitar Y para sim e N para não e o jogador é questionado novamente. Assim, nada inexperado ocorre caso a entrada não seja adequada.
+
+Jogar Cartas: Para jogar cartas, o jogador dispõe dos números disponíveis de acordo com o número de cartas que tem em mãos. Qualquer entrada que não seja um número válido irá retornar que a entrada é inválida e o jogador terá uma nova oportunidade de lançar a carta.
+
+-----------------------------------------------------------------------------------------------------
+
