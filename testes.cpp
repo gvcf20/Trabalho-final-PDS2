@@ -1,6 +1,7 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.hpp"
 #include <iostream>
+#include "header/cartas.hpp"
 #include "header/regras.hpp"
 #include "code/regras.cpp"
 #include "header/dupla.hpp"
@@ -122,5 +123,8 @@ TEST_CASE("Exibição de Duplas") {
 
     CHECK(output.str() == expectedOutput);
 }
+//Então profesor, o arquivo doctest está apresentando erro, mas pegamos o arquivo do githubs como o senhor havia indicado.
+//Por isso, não conseguimos testar o doctest e não implementamos mais testes, pois nem sabemos se funcionará. No mais, agradeço
+//a atenção e lhe desejo boas férias.
 
 

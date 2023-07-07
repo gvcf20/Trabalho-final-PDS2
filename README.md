@@ -316,7 +316,7 @@ pt_truco(bool condicao): Método que retorna a pontuação correspondente ao tru
 
 21 - Class Rodada:
 
-A classe Rodada representa uma rodada do jogo. Ela é responsável por distribuir cartas, exibir as cartas dos jogadores e realizar outras ações relacionadas à rodada.
+A classe Rodada representa uma rodada do jogo. Ela é responsável por distribuir cartas, exibir as cartas dos jogadores e realizar outras ações relacionadas à rodada. 
 
 Métodos:
 
@@ -326,7 +326,7 @@ exibe_cartas(std::pair<Dupla, Dupla> duplas, unsigned j): Método que recebe um 
 
 21 - Class Comeca_Rodada:
 
-A classe Comeca_Rodada é responsável por iniciar uma rodada do jogo. Ela realiza as ações necessárias para começar uma nova rodada, como distribuir as cartas, gerenciar pedidos de truco e realizar as jogadas dos jogadores.
+A classe Comeca_Rodada é responsável por iniciar uma rodada do jogo. Ela realiza as ações necessárias para começar uma nova rodada, como distribuir as cartas, gerenciar pedidos de truco e realizar as jogadas dos jogadores. Além disso, dentro da "Comeca_Rodada", temos o caso de distribuições de pontos relacionados a quem ganhou cada sub_rodada. Contudo, apresenta um pequeno bug, no sentido de algumas vezes, aleatoriamente, não é apresentado quem ganhou a sub_rodada em questão, mas sempre apresenta os casos em que se tem empate (de pontuações, e a sub_rodada não contabiliza pontos) ou o ganhador e a distribuição de pontos é realizado com sucesso. 
 
 Métodos:
 
@@ -360,7 +360,7 @@ Tratamento de entradas inesperadas:
 
 Perguntas de Sim ou Não: A entrada deve ser Y ou N. Qualquer entrada diferente disso, irá retornar que a entrada é inválida e deve-se digitar Y para sim e N para não e o jogador é questionado novamente. Assim, nada inexperado ocorre caso a entrada não seja adequada.
 
-Jogar Cartas: Para jogar cartas, o jogador dispõe dos números disponíveis de acordo com o número de cartas que tem em mãos. Qualquer entrada que não seja um número válido irá retornar que a entrada é inválida e o jogador terá uma nova oportunidade de lançar a carta.
+Jogar Cartas: Para jogar cartas, o jogador dispõe dos números disponíveis de acordo com o número de cartas que tem em mãos. Qualquer entrada que não seja um número válido irá retornar que a entrada é inválida e o jogador terá uma nova oportunidade de lançar a carta. E, nesse caso, fizemos de modo que para jogar cartas, ele permanece no looping até que ou ocorra encerramento do programa ou a pessoa digite corretamente.
 
 -----------------------------------------------------------------------------------------------------
 
