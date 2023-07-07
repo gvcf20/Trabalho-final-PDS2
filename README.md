@@ -3,7 +3,7 @@ Trabalho final de pds. Data Final 27/06. Valor: 30 pontos
 
 Tema: Truco
 
-Grupo: Gabriel Vaz C.Ferreira, Bruno Kang Wu, Philip Ribeiro Costa, Gabriel Silva de Araujo
+Grupo: Gabriel Vaz C.Ferreira (https://github.com/gvcf20), Bruno Kang Wu (https://github.com/BrunoWu8), Philip Ribeiro Costa (https://github.com/Janduigorila), Gabriel Silva de Araujo (https://github.com/gabrovnikov)
 
 -----------------------------------------------------------------------------------------------------
 
